@@ -1,8 +1,20 @@
+@import url("./home.css");
+
+.logo {
+  margin-top: 40px;
+  margin-bottom: 70px;
+  width: 18%;
+  height: 20%;
+}
+
 #contact_modal {
   display: none;
 }
 
 .photograph-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   background-color: #fafafa;
   height: 300px;
   margin: 0 100px;
@@ -19,6 +31,7 @@
   background-color: #901c1c;
   border-radius: 5px;
   cursor: pointer;
+  
 }
 
 .modal {

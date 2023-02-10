@@ -11,15 +11,11 @@
     <title>Fisheye - photographe</title>
   </head>
   <body>
-    <header>
+    <header role="banner" aria-label="En-tête de la page">
       <img src="../assets/logo/logo.png" class="logo" />
     </header>
     <main id="main">
-      <div class="photograph-header">
-        <button class="contact_button" onclick="displayModal()">
-          Contactez-moi
-        </button>
-      </div>
+      <div class="photograph-header"></div>
     </main>
     <div id="contact_modal">
       <div class="modal">
@@ -36,7 +32,15 @@
         </form>
       </div>
     </div>
+
+    <!-- Api -->
+    <script src="../scripts/api/Api.js"></script>
+
+    <!-- Templates -->
+    <script src="../scripts/templates/photographerTemplate.js"></script>
+
     <script src="../scripts/pages/photographer.js"></script>
+
     <script src="../scripts/utils/contactForm.js"></script>
   </body>
 </html>

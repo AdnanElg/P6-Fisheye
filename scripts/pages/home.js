@@ -1,16 +1,15 @@
 class Home {
   constructor() {
     this.photographer_section = document.querySelector(".photographer_section");
-    this.photographersApi = new PhotographersApi("./data/photographers.json");
+    this.dataApi = new DataApi("../data/photographers.json");
   }
 
   async main() {
-    const photographersSection =
-      await this.photographersApi.getDataPhotographers();
+    const photographersSection = await this.dataApi.getData();
 
     photographersSection.photographers.forEach((photographers) => {
-      const Template = new PhotographersCard(photographers);
-      this.photographer_section.append(Template.createPhotographerCard());
+      const TemplateHome = new HomeCard(photographers);
+      this.photographer_section.append(TemplateHome.createHomeCard());
     });
   }
 }

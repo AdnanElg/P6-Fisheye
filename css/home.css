@@ -1,7 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans&display=swap');
+
 *::before::after {
   box-sizing: border-box;
   margin: 0px;
   padding: 0px;
+}
+
+body{
   font-family: "DM Sans", sans-serif;
 }
 
@@ -20,15 +25,39 @@ header {
   margin-top: 20px;
 }
 
+@media screen and (max-width: 768px) {
+  header {
+    flex-direction: column;
+  }
+}
+
 h1 {
-  color: #901c1c;
+  color: var(--text-color-secondary);
   margin-right: 100px;
   font-size: 36px;
 }
 
+@media screen and (max-width: 768px) {
+  h1 {
+    margin-right: 0px;
+  }
+}
+
+@media screen and (max-width: 330px) {
+  h1 {
+    text-align: center;
+  }
+}
+
 .logo {
-  height: 50px;
+  height: 55px;
   margin-left: 100px;
+}
+
+@media screen and (max-width: 768px) {
+  .logo {
+    margin-left: 0px;
+  }
 }
 
 .photographer_section {
@@ -39,6 +68,12 @@ h1 {
   margin-top: 5em;
   margin-bottom: 7em;
   gap: 30px;
+}
+
+@media screen and (max-width: 768px) {
+  .photographer_section {
+    gap: 60px;
+  }
 }
 
 .photographer_section .card_profile {
@@ -56,16 +91,17 @@ h1 {
   }
 }
 
-/* @media screen and (max-width: 768px) {
+@media screen and (max-width: 768px) {
   .photographer_section .card_profile {
     width: calc(60% - (2 * 35px) / 3);
   }
-} */
+}
 
 .photographer_section .card_profile a {
   text-align: center;
   text-decoration: none;
 }
+
 
 .photographer_section .card_profile .card_picture {
   height: 220px;
@@ -85,6 +121,13 @@ h1 {
 .cards_info {
   text-align: center;
   line-height: 15px;
+}
+
+
+@media screen and (max-width: 430px) {
+  .cards_info  {
+    line-height: 25px;
+  }
 }
 
 .cards_info .cards_country {
