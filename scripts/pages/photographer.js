@@ -1,16 +1,16 @@
 class Photographer {
   constructor() {
-    let url = new URLSearchParams(document.location.search);
-    this.id = url.get("id");
+    const url = new URLSearchParams(document.location.search);
+    this.id = parseInt(url.get("id"));
+
     this.photograph_header = document.querySelector(".photograph-header");
-    this.dataApi = new DataApi(`../data/photographers.json?id=${this.id}`);
+    this.dataApi = new DataApi(`../data/photographers.json`);
   }
 
   async main() {
-    const dataPhotographer = await this.dataApi.getData(this.id);
-
+    const PhotographerDataById = await this.dataApi.getDataById(this.id);
     const TemplatePhotographerHeader = new PhotographerHeader(
-      dataPhotographer.photographers
+      PhotographerDataById
     );
 
     this.photograph_header.append(

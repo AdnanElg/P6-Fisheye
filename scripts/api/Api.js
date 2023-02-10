@@ -3,17 +3,29 @@ class Api {
     this._url = url;
   }
 
-  async get(id) {
+  async getPhotographerAll() {
     try {
       const res = await fetch(this._url);
       const data = await res.json();
-      if (id) {
-        return data.find((dataPhotographer) => dataPhotographer.id === id);
-      }
-      console.log(data.photographers);
-      return data;
+
+      const photographerAll = data.photographers;
+      return photographerAll;
     } catch (err) {
-      console.log("Error fetching data:", err);
+      throw new Error("Error fetching data:", err);
+    }
+  }
+
+  async getPhotographerById(id) {
+    try {
+      const res = await fetch(this._url);
+      const data = await res.json();
+
+      const photographerById = data.photographers.find(
+        (dataPhotographer) => dataPhotographer.id === id
+      );
+      return photographerById;
+    } catch (err) {
+      throw new Error("Error fetching data Id:", err);
     }
   }
 }
@@ -23,7 +35,11 @@ class DataApi extends Api {
     super(url);
   }
 
-  async getData(id) {
-    return await this.get(id);
+  async getDataAll() {
+    return await this.getPhotographerAll();
+  }
+
+  async getDataById(id) {
+    return await this.getPhotographerById(id);
   }
 }
