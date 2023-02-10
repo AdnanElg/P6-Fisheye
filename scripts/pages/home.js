@@ -7,8 +7,8 @@ class Home {
   async main() {
     const photographersSection = await this.dataApi.getData();
 
-    photographersSection.photographers.forEach((photographers) => {
-      const TemplateHome = new HomeCard(photographers);
+    photographersSection.photographers.forEach((dataHome) => {
+      const TemplateHome = new HomeCard(dataHome);
       this.photographer_section.append(TemplateHome.createHomeCard());
     });
   }

@@ -1,6 +1,6 @@
 class PhotographerHeader {
-  constructor(photographers) {
-    this._photographers = photographers;
+  constructor(dataPhotographer) {
+    this._photographers = dataPhotographer;
   }
 
   createPhotographHeader() {

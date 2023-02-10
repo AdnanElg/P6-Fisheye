@@ -1,6 +1,6 @@
 class HomeCard {
-  constructor(photographers) {
-    this._photographers = photographers;
+  constructor(dataHome) {
+    this._photographers = dataHome;
   }
 
   createHomeCard() {
