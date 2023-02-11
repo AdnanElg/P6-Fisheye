@@ -32,7 +32,7 @@ header {
 
 .info_name {
   color: var(--text-color-primary);
-  font-size: 40px;
+  font-size: 50px;
   font-weight: 500;
 }
 
@@ -42,13 +42,13 @@ header {
 }
 
 .info_tagline {
-  color: var(--text-color-tertiary);
+  color: var(--text-color-quaternary);
   font-size: 20px;
 }
 
 .btn_contact button {
   border: none;
-  background-color: var(--text-color-primary);
+  background-color: var(--text-color-secondary);
   border-radius: 5px;
   padding: 19px 23px;
   color: var(--text-color-btn);
@@ -61,6 +61,93 @@ header {
   width: 220px;
   border-radius: 50%;
   object-fit: cover;
+}
+
+.photograph_section2 {
+  margin-top: 50px;
+  margin-left: 6.3rem;
+}
+
+.sort-container {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.sort-container label {
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--text-color-tertiary);
+}
+
+.btn-dropDown {
+  margin-left: 30px;
+  border: none;
+  background-color: var(--text-color-secondary);
+  border-radius: 5px;
+  padding: 17px 45px;
+  font-size: 18px;
+  cursor: pointer;
+  color: var(--text-color-btn);
+  padding-left: 30px;
+}
+
+.btn-dropDown i {
+  position: relative;
+}
+
+.btn-dropDown i::before {
+  position: absolute;
+  bottom: -4px;
+  left: 7px;
+}
+
+.container-select {
+  position: relative;
+  display: none;
+}
+
+.container-select ul {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  background-color: var(--text-color-secondary);
+  border-radius: 5px;
+  padding: 0px 42px;
+  width: 8.2em;
+  padding-left: 15px;
+  padding-right: 15px;
+  right: 0px;
+  bottom: -10em;
+  cursor: pointer;
+}
+
+.container-select ul li {
+  line-height: 55px;
+  border-bottom: solid 1px var(--text-color-btn);
+  font-size: 18px;
+  color: var(--text-color-btn);
+}
+
+.container-select ul li:nth-child(3) {
+  border-bottom: none;
+}
+
+.container-select ul li:nth-child(1) i {
+  position: absolute;
+  right: 22px;
+  top: 17px;
+}
+
+.photograph_section3 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5em;
+  margin-bottom: 7em;
+  gap: 30px;
 }
 
 #contact_modal {

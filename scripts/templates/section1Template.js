@@ -3,11 +3,11 @@ class PhotographerSection1 {
     this._photographers = PhotographerDataById;
   }
 
-  createPhotographSection1() {
+  createPhotographHeaderSection1() {
     const photograph_section1 = document.createElement("div");
     photograph_section1.classList.add("section1_header_photographer");
 
-    const PhotographerInfo = `
+    const photographerInfo = `
         <div class='info_photographer' role="region">
           <h2 class='info_name' aria-label="Nom du photographe">${this._photographers.name}</h2>
           <span aria-hidden="true" class='info_country'>${this._photographers.country}, ${this._photographers.city}</span>
@@ -21,7 +21,7 @@ class PhotographerSection1 {
         </div>
       `;
 
-    photograph_section1.innerHTML = PhotographerInfo;
+    photograph_section1.innerHTML = photographerInfo;
 
     return photograph_section1;
   }

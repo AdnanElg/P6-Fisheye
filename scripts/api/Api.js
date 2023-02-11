@@ -9,6 +9,7 @@ class Api {
       const data = await res.json();
 
       const photographerAll = data.photographers;
+      console.log(photographerAll);
       return photographerAll;
     } catch (err) {
       throw new Error("Error fetching data:", err);
@@ -25,7 +26,23 @@ class Api {
       );
       return photographerById;
     } catch (err) {
-      throw new Error("Error fetching data Id:", err);
+      throw new Error("Error fetching data :", err);
+    }
+  }
+
+  async getMediaById(id) {
+    try {
+      const res = await fetch(this._url);
+      const data = await res.json();
+
+      const photographerMediaById = data.media.filter(
+        (dataMediaPhotographer) => dataMediaPhotographer.photographerId === id
+      );
+
+      console.log(photographerMediaById);
+      return photographerMediaById;
+    } catch (err) {
+      throw new Error("Error fetching data:", err);
     }
   }
 }
@@ -41,5 +58,9 @@ class DataApi extends Api {
 
   async getDataById(id) {
     return await this.getPhotographerById(id);
+  }
+
+  async getDataMediaById(id) {
+    return await this.getMediaById(id);
   }
 }

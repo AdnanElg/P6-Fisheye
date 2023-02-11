@@ -13,8 +13,8 @@ body {
 :root {
   --text-color-primary: #d3573c;
   --text-color-secondary: #911c1c;
-  --text-color-tertiary: black;
-  --text-color-quaternary: #757575;
+  --text-color-tertiary: #000000;
+  --text-color-quaternary: #525252;
   --text-color-btn: #ffffff;
   --text-background-color: #fafafa;
 }

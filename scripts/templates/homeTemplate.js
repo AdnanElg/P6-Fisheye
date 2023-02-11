@@ -7,7 +7,7 @@ class HomeCard {
     const photographer_section = document.createElement("article");
     photographer_section.classList.add("card_profile");
 
-    const HomeCard = `
+    const homeCard = `
             <a href="./html/photographer.html?id=${this._photographers.id}" title= "Visitez la page de profil de : ${this._photographers.name}" role="link">
                 <img alt="Photo de profil de ${this._photographers.name}" aria-hidden="true" class='card_picture' src="../assets/photo_profil_home/${this._photographers.portrait}">
                 <h2 class='card_name' aria-label="Nom du photographe" >${this._photographers.name}</h2>
@@ -19,7 +19,7 @@ class HomeCard {
             </div>
         `;
 
-    photographer_section.innerHTML = HomeCard;
+    photographer_section.innerHTML = homeCard;
 
     return photographer_section;
   }
