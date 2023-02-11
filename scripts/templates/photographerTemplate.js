@@ -1,28 +1,28 @@
-class PhotographerHeader {
+class PhotographerSection1 {
   constructor(PhotographerDataById) {
     this._photographers = PhotographerDataById;
   }
 
-  createPhotographHeader() {
-    const photograph_header = document.createElement("div");
-    photograph_header.classList.add("section_header_photographer");
+  createPhotographSection1() {
+    const photograph_section1 = document.createElement("div");
+    photograph_section1.classList.add("section1_header_photographer");
 
     const PhotographerInfo = `
-        <div class='info_photographer'>
-          <h2 class='info_name'>${this._photographers.name}</h2>
+        <div class='info_photographer' role="region">
+          <h2 class='info_name' aria-label="Nom du photographe">${this._photographers.name}</h2>
           <span aria-hidden="true" class='info_country'>${this._photographers.country}, ${this._photographers.city}</span>
-          <p class='info_tagline'>${this._photographers.tagline}</p>
+          <p class='info_tagline' aria-label="Phrase d'accroche du photographe">${this._photographers.tagline}</p>
         </div>
         <div class='btn_contact'>
-          <button type="button">Contactez-moi</button>
+          <button type="button" aria-label="Bouton pour contacter le photographe">Contactez-moi</button>
         </div>
         <div class='picture_profil_photographer'>
-          <img alt="Photo de profil de ${this._photographers.name}" class='info_picture' src="../assets/photo_profil_home/${this._photographers.portrait}">
+          <img alt="Photo de profil de ${this._photographers.name}" aria-hidden="true"  class='info_picture' src="../assets/photo_profil_home/${this._photographers.portrait}">
         </div>
       `;
 
-    photograph_header.innerHTML = PhotographerInfo;
+    photograph_section1.innerHTML = PhotographerInfo;
 
-    return photograph_header;
+    return photograph_section1;
   }
 }

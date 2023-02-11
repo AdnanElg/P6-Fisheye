@@ -3,18 +3,19 @@ class Photographer {
     const url = new URLSearchParams(document.location.search);
     this.id = parseInt(url.get("id"));
 
-    this.photograph_header = document.querySelector(".photograph-header");
+    this.photograph_section1 = document.querySelector(".photograph_section1");
     this.dataApi = new DataApi(`../data/photographers.json`);
   }
 
   async main() {
     const PhotographerDataById = await this.dataApi.getDataById(this.id);
-    const TemplatePhotographerHeader = new PhotographerHeader(
+
+    const TemplatePhotographerSection1 = new PhotographerSection1(
       PhotographerDataById
     );
 
-    this.photograph_header.append(
-      TemplatePhotographerHeader.createPhotographHeader()
+    this.photograph_section1.append(
+      TemplatePhotographerSection1.createPhotographSection1()
     );
   }
 }

@@ -1,19 +1,25 @@
 @import url("./home.css");
 
-.logo {
-  margin-top: 40px;
+header {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  margin-top: 50px;
   margin-bottom: 70px;
-  width: 13%;
+}
+
+.logo {
+  width: 35%;
   height: 20%;
 }
 
-.photograph-header {
+.photograph_section1 {
   background-color: var(--text-background-color);
   height: 300px;
   margin: 0 100px;
 }
 
-.section_header_photographer {
+.section1_header_photographer {
   display: flex;
   justify-content: space-between;
   align-items: center;
