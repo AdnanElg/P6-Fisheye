@@ -9,7 +9,6 @@ class Api {
       const data = await res.json();
 
       const photographerAll = data.photographers;
-      console.log(photographerAll);
       return photographerAll;
     } catch (err) {
       throw new Error("Error fetching data:", err);
@@ -39,7 +38,6 @@ class Api {
         (dataMediaPhotographer) => dataMediaPhotographer.photographerId === id
       );
 
-      console.log(photographerMediaById);
       return photographerMediaById;
     } catch (err) {
       throw new Error("Error fetching data:", err);

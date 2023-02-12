@@ -1,24 +1,45 @@
 class PhotographerSection3 {
-  constructor(photographerDataMediaById) {
+  constructor(photographerDataMediaById, photographerDataById) {
     this._photographers = photographerDataMediaById;
+    this._photographers2 = photographerDataById;
   }
 
   createPhotographArticleSection3() {
     const photograph_section3 = document.createElement("article");
     photograph_section3.classList.add("section3_article");
 
-    const photographerArticle = `
-        
-            <img alt="Photo de profil de ${this._photographers.name}" aria-hidden="true" class='card_picture' src="../assets/profil_photographers/${this._photographers.image}">
-         
-           
-              <span aria-hidden="true" class='cards_country'>${this._photographers.title}</span>
-              <p class='cards_tagline' aria-label="Phrase d'accroche du photographe">${this._photographers.likes}</p>
-      
-      `;
+    const photographerArticle = "";
+
+    if (this._photographers.type === "image") {
+      photographerArticle = `
+          <figure>
+            <img src='../assets/profil_photographers/${this._photographers2.name}/${this._photographers.image}'>
+            <figcaption>
+              <p>${this._photographers.title}</p>
+              <div>
+                <span>${this._photographers.likes}</span>
+                <i class="heart fas fa-heart"></i>
+              </div>
+            </figcaption>
+          </figure>
+        `;
+    } else if (this._photographers.type === "video") {
+      photographerArticle = `
+          <figure>
+            <video src='../assets/profil_photographers/${this._photographers2.name}/${this._photographers.video}'></video>
+            <figcaption>
+              <p>${this._photographers.title}</p>
+              <div>
+                <span>${this._photographers.likes}</span>
+                <i class="heart fas fa-heart"></i>
+              </div>
+            </figcaption>
+          </figure>
+        `;
+    }
 
     photograph_section3.innerHTML = photographerArticle;
-
+    console.log(photographerArticle);
     return photograph_section3;
   }
 }

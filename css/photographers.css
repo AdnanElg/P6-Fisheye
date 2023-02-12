@@ -150,6 +150,16 @@ header {
   gap: 30px;
 }
 
+.section3_article img {
+  width: 10%;
+  height: 10%;
+}
+
+.section3_article video {
+  width: 10%;
+  height: 10%;
+}
+
 #contact_modal {
   display: none;
 }

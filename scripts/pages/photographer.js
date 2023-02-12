@@ -32,14 +32,16 @@ class Photographer {
       templatefilterSection2.createPhotographFilterSection2()
     );
 
-    photographerDataMediaById.forEach((photographerDataMediaById) => {
+    for (let i = 0; i < photographerDataMediaById.length; i++) {
       const templateArticleSection3 = new PhotographerSection3(
-        photographerDataMediaById
+        photographerDataMediaById[i],
+        photographerDataById
       );
+
       this.photograph_section3.append(
         templateArticleSection3.createPhotographArticleSection3()
       );
-    });
+    }
   }
 }
 
