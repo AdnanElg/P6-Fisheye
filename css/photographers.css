@@ -75,7 +75,7 @@ header {
 @media screen and (max-width: 549px) {
   .photograph_section1 {
     height: 0px;
-    background-color: white;
+    background-color: var(--text-color-btn);
     margin: auto;
   }
 }
@@ -406,7 +406,7 @@ header {
 
 @media screen and (max-width: 330px) {
   .picture_profil_photographer img  {
-   left: 4.5em;
+   left: 5em;
   }
 }
 
@@ -565,16 +565,24 @@ header {
   border-radius: 5px;
 }
 
-@media screen and (max-width: 330px) {
+@media screen and (max-width: 425px) {
   .section3_articles figure img {
-    width: 250px;
-    height: 230px;
+    max-width: 260px;
   }
   .section3_articles figure video {
-    width: 250px;
-    height: 230px;
+    max-width: 260px;
   }
 }
+
+@media screen and (max-width: 320px) {
+  .section3_articles figure img {
+    max-width: 250px;
+  }
+  .section3_articles figure video {
+    max-width: 250px;
+  }
+}
+
 
 .section3_articles figcaption {
   display: flex;

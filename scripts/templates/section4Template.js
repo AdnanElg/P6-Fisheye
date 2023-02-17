@@ -6,10 +6,10 @@ class PhotographerSection4 {
 
   createPhotographTotalSection4() {
     const photograph_section4 = document.createElement("div");
-    // photograph_section4.classList.add("");
+    photograph_section4.classList.add("");
 
     const photographerTotal = `
-    
+          
       `;
 
     photograph_section4.innerHTML = photographerTotal;

@@ -38,7 +38,7 @@ class Photographer {
     const templateTotalSection4 = new PhotographerSection4(
       photographerDataMediaById,
       photographerDataById
-    );
+      );
   
     this.photograph_section1.append(
       templateHeaderSection1.createPhotographHeaderSection1()
