@@ -27,7 +27,7 @@ header {
   margin-top: 20px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 990px) {
   header {
     flex-direction: column;
   }
@@ -39,7 +39,7 @@ h1 {
   font-size: 36px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 990px) {
   h1 {
     margin-right: 0px;
   }
@@ -51,14 +51,26 @@ h1 {
   }
 }
 
+@media screen and (max-width: 325px) {
+  h1 {
+    font-size: 25px;
+  }
+}
+
 .logo {
   height: 55px;
   margin-left: 100px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 990px) {
   .logo {
     margin-left: 0px;
+  }
+}
+
+@media screen and (max-width: 325px) {
+  .logo {
+    height: 35px;
   }
 }
 
@@ -72,7 +84,7 @@ h1 {
   gap: 30px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 990px) {
   .photographer_section {
     gap: 60px;
   }
@@ -85,15 +97,16 @@ h1 {
   align-items: center;
   flex-direction: column;
   width: calc(33.33% - (2 * 35px) / 3);
+  margin-bottom: 30px;
 }
 
-@media screen and (max-width: 1050px) {
+@media screen and (max-width: 1180px) {
   .photographer_section .card_profile {
     width: calc(50% - (2 * 35px) / 3);
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 990px) {
   .photographer_section .card_profile {
     width: calc(60% - (2 * 35px) / 3);
   }
@@ -111,6 +124,13 @@ h1 {
   object-fit: cover;
 }
 
+@media screen and (max-width: 325px) {
+.photographer_section .card_profile .card_picture {
+    height: 150px;
+    width: 150px;
+  }
+}
+
 .photographer_section .card_profile .card_name {
   color: var(--text-color-primary);
   font-size: 40px;
@@ -119,9 +139,22 @@ h1 {
   font-weight: 500;
 }
 
+@media screen and (max-width: 325px) {
+  .photographer_section .card_profile .card_name {
+     font-size: 25px;
+    }
+  }
+
 .cards_info {
   text-align: center;
   line-height: 15px;
+}
+
+
+@media screen and (max-width: 515px) {
+  .cards_info {
+    line-height: 22px;
+  }
 }
 
 @media screen and (max-width: 430px) {

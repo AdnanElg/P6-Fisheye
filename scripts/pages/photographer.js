@@ -6,6 +6,7 @@ class Photographer {
     this.photograph_section1 = document.querySelector(".photograph_section1");
     this.photograph_section2 = document.querySelector(".photograph_section2");
     this.photograph_section3 = document.querySelector(".photograph_section3");
+    this.photograph_section4 = document.querySelector(".photograph_section4");
 
     this.dataApi = new DataApi(`../data/photographers.json`);
   }
@@ -24,6 +25,21 @@ class Photographer {
       photographerDataMediaById
     );
 
+    for (let i = 0; i < photographerDataMediaById.length; i++) {
+      const templateArticleSection3 = new PhotographerSection3(
+        photographerDataMediaById[i],
+        photographerDataById
+      );
+      this.photograph_section3.append(
+        templateArticleSection3.createPhotographArticleSection3()
+      );
+    }
+    
+    const templateTotalSection4 = new PhotographerSection4(
+      photographerDataMediaById,
+      photographerDataById
+    );
+  
     this.photograph_section1.append(
       templateHeaderSection1.createPhotographHeaderSection1()
     );
@@ -32,16 +48,10 @@ class Photographer {
       templatefilterSection2.createPhotographFilterSection2()
     );
 
-    for (let i = 0; i < photographerDataMediaById.length; i++) {
-      const templateArticleSection3 = new PhotographerSection3(
-        photographerDataMediaById[i],
-        photographerDataById
-      );
-
-      this.photograph_section3.append(
-        templateArticleSection3.createPhotographArticleSection3()
-      );
-    }
+    this.photograph_section4.append(
+      templateTotalSection4.createPhotographTotalSection4()
+    );
+   
   }
 }
 

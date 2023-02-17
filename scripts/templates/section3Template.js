@@ -6,40 +6,28 @@ class PhotographerSection3 {
 
   createPhotographArticleSection3() {
     const photograph_section3 = document.createElement("article");
-    photograph_section3.classList.add("section3_article");
+    photograph_section3.classList.add("section3_articles");
 
-    const photographerArticle = "";
-
-    if (this._photographers.type === "image") {
-      photographerArticle = `
-          <figure>
-            <img src='../assets/profil_photographers/${this._photographers2.name}/${this._photographers.image}'>
-            <figcaption>
-              <p>${this._photographers.title}</p>
-              <div>
-                <span>${this._photographers.likes}</span>
-                <i class="heart fas fa-heart"></i>
-              </div>
-            </figcaption>
-          </figure>
-        `;
-    } else if (this._photographers.type === "video") {
-      photographerArticle = `
-          <figure>
-            <video src='../assets/profil_photographers/${this._photographers2.name}/${this._photographers.video}'></video>
-            <figcaption>
-              <p>${this._photographers.title}</p>
-              <div>
-                <span>${this._photographers.likes}</span>
-                <i class="heart fas fa-heart"></i>
-              </div>
-            </figcaption>
-          </figure>
-        `;
-    }
+    let photographerArticle = `
+      <figure>
+          ${
+            this._photographers.hasOwnProperty("image")
+              ? `<img src='../assets/profil_photographers/${this._photographers2.name}/${this._photographers.image}'>`
+              : this._photographers.hasOwnProperty("video")
+              ? `<video src='../assets/profil_photographers/${this._photographers2.name}/${this._photographers.video}'></video>`
+              : ""
+          }
+          <figcaption>
+            <p class='article_title'>${this._photographers.title}</p>
+            <div class='articles_likes'>
+              <span>${this._photographers.likes}</span>
+              <i class="heart fas fa-heart"></i>
+            </div>
+          </figcaption>
+      </figure>
+    `;
 
     photograph_section3.innerHTML = photographerArticle;
-    console.log(photographerArticle);
     return photograph_section3;
   }
 }

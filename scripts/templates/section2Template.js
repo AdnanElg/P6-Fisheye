@@ -8,9 +8,11 @@ class PhotographerSection2 {
     photograph_section2.classList.add("sort-container");
 
     const photographerFilter = `
-       <label for="sort-select">Trier par : </label>
-       <button type='button' class='btn-dropDown'>Popularité <i class="arrows fas fa-chevron-down"></i></button>
-       
+      <div class='container-btn-select'>
+        <label for="sort-select">Trier par : </label>
+        <button type='button'>Popularité <i class="arrows fas fa-chevron-down"></i></button>
+      </div>
+
        <div class='container-select'>
           <ul>
             <li>Popularité <i class="arrows fas fa-chevron-up"></i></li>
