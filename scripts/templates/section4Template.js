@@ -14,8 +14,8 @@ class PhotographerSection4 {
     photograph_section4.classList.add("container-total");
 
     const photographerTotal = `
-          <span>${this.sommesLikes} <i class="heart fas fa-heart"></i></span> 
-          <span>${this._photographers2.price}€ / jours</span>
+          <span aria-label= "Nombre de likes : ${this.sommesLikes}">${this.sommesLikes} <i class="heart fas fa-heart"></i></span> 
+          <span aria-label= "Prix : ${this._photographers2.price} euros par jour">${this._photographers2.price}€ / jours</span>
       `;
 
     photograph_section4.innerHTML = photographerTotal;

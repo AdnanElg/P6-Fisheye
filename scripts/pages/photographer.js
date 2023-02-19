@@ -13,10 +13,12 @@ class Photographer {
 
   async main() {
     const photographerDataById = await this.dataApi.getDataById(this.id);
+
     const photographerDataMediaById = await this.dataApi.getDataMediaById(
       this.id
     );
 
+   
     const templateHeaderSection1 = new PhotographerSection1(
       photographerDataById
     );

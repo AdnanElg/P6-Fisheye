@@ -15,7 +15,7 @@ class PhotographerSection2 {
 
        <div class='container-select'>
           <ul>
-            <li>Popularité <i class="arrows fas fa-chevron-up"></i></li>
+            <li aria-current="true">Popularité <i class="arrows fas fa-chevron-up"></i></li>
             <li>Date</li>
             <li>Titre</li>
           </ul>
