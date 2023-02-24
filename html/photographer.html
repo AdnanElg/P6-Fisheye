@@ -51,58 +51,36 @@
         aria-label="phote et video de la section des photographes"
       ></section>
       <!-- Fin Section trois -->
-       <!-- Début Section quatre -->
-       <section
-       class="photograph_section4"
-       aria-label="prix total et nombres de likes par photos"
-     ></section>
-     <!-- Fin Section quatre -->
+      <!-- Début Section quatre -->
+      <section
+        class="photograph_section4"
+        aria-label="prix total et nombres de likes par photos"
+      ></section>
+      <!-- Fin Section quatre -->
     </main>
     <!-- Fin du Main -->
 
     <!-- Début Modal -->
-    <div id="contact_modal" aria-hidden="true">
-      <div class="modal">
-        <header>
-          <h2>Contactez-moi</h2>
-          <img
-            src="../assets/icons/close.svg"
-            onclick="closeModal()"
-            alt="Icône de fermeture"
-          />
-        </header>
-        <form>
-          <div>
-            <label for="firstName">Prénom</label>
-            <input id="firstName" aria-label="Champ de saisie du prénom" />
-          </div>
-          <button
-            class="contact_button"
-            aria-label="Bouton d'envoi du formulaire de contact"
-          >
-            Envoyer
-          </button>
-        </form>
-      </div>
-    </div>
+    <div id="contact_modal" aria-hidden="true"></div>
     <!-- Fin Modal -->
 
     <!-- Api -->
     <script src="../scripts/api/Api.js"></script>
 
     <!-- Templates -->
-    <script src="../scripts/templates/Section1Template.js"></script>
-    <script src="../scripts/templates/Section2Template.js"></script>
-    <script src="../scripts/templates/Section3Template.js"></script>
-    <script src="../scripts/templates/Section4Template.js"></script>
+    <script src="../scripts/templates/HeaderTemplate.js"></script>
+    <script src="../scripts/templates/FilterTemplate.js"></script>
+    <script src="../scripts/templates/ArticleTemplate.js"></script>
+    <script src="../scripts/templates/TotalTemplate.js"></script>
+    <script src="../scripts/templates/ModalTemplate.js"></script>
 
-     <!-- Factorie -->
-     <script src="../scripts/factories/MediaFactory.js"></script>
+    <!-- Factorie -->
+    <script src="../scripts/factories/MediaFactory.js"></script>
 
     <!-- Pages -->
     <script src="../scripts/pages/Photographer.js"></script>
 
     <!-- Utils -->
-    <script src="../scripts/utils/ContactForm.js"></script>
+    <script src="../scripts/utils/Modal.js"></script>
   </body>
 </html>

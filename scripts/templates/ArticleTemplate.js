@@ -1,5 +1,3 @@
-import { MediaFactory } from "../factories/MediaFactory";
-
 class PhotographerSection3 {
   constructor(photographerDataMediaById, photographerDataById) {
     this._photographers = photographerDataMediaById;
@@ -36,5 +34,6 @@ class PhotographerSection3 {
     return photograph_section3;
   }
 }
+
 
 

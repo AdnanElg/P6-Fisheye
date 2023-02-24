@@ -3,10 +3,11 @@ class Photographer {
     const url = new URLSearchParams(document.location.search);
     this.id = parseInt(url.get("id"));
 
-    this.photograph_section1 = document.querySelector(".photograph_section1");
-    this.photograph_section2 = document.querySelector(".photograph_section2");
-    this.photograph_section3 = document.querySelector(".photograph_section3");
-    this.photograph_section4 = document.querySelector(".photograph_section4");
+    this.photograph_header = document.querySelector(".photograph_section1");
+    this.photograph_filter = document.querySelector(".photograph_section2");
+    this.photograph_article = document.querySelector(".photograph_section3");
+    this.photograph_total = document.querySelector(".photograph_section4");
+    this.photograph_modal = document.querySelector("#contact_modal");
 
     this.dataApi = new DataApi(`../data/photographers.json`);
   }
@@ -18,7 +19,6 @@ class Photographer {
       this.id
     );
 
-   
     const templateHeaderSection1 = new PhotographerSection1(
       photographerDataById
     );
@@ -32,28 +32,31 @@ class Photographer {
         photographerDataMediaById[i],
         photographerDataById
       );
-      this.photograph_section3.append(
+      this.photograph_article.append(
         templateArticleSection3.createPhotographArticleSection3()
       );
     }
-    
+
     const templateTotalSection4 = new PhotographerSection4(
       photographerDataMediaById,
       photographerDataById
-      );
-  
-    this.photograph_section1.append(
+    );
+
+    const templateModal = new PhotographerModale(photographerDataById);
+
+    this.photograph_header.append(
       templateHeaderSection1.createPhotographHeaderSection1()
     );
 
-    this.photograph_section2.append(
+    this.photograph_filter.append(
       templatefilterSection2.createPhotographFilterSection2()
     );
 
-    this.photograph_section4.append(
+    this.photograph_total.append(
       templateTotalSection4.createPhotographTotalSection4()
     );
-   
+
+    this.photograph_modal.append(templateModal.createPhotographerModale());
   }
 }
 

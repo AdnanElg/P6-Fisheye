@@ -1,6 +1,6 @@
 class Home {
   constructor() {
-    this.photographer_section = document.querySelector(".photographer_section");
+    this.photographer_home = document.querySelector(".photographer_section");
     this.dataApi = new DataApi("../data/photographers.json");
   }
 
@@ -9,7 +9,7 @@ class Home {
 
     photographersDataAll.forEach((dataHome) => {
       const TemplateHome = new HomeCard(dataHome);
-      this.photographer_section.append(TemplateHome.createHomeCard());
+      this.photographer_home.append(TemplateHome.createHomeCard());
     });
   }
 }
