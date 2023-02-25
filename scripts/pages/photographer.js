@@ -24,7 +24,8 @@ class Photographer {
     );
 
     const templatefilterSection2 = new PhotographerSection2(
-      photographerDataMediaById
+      photographerDataMediaById,
+      photographerDataById
     );
 
     for (let i = 0; i < photographerDataMediaById.length; i++) {

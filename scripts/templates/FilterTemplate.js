@@ -1,6 +1,7 @@
 class PhotographerSection2 {
-  constructor(photographerDataMediaById) {
+  constructor(photographerDataMediaById, photographerDataById) {
     this._photographers = photographerDataMediaById;
+    this._photographers2 = photographerDataById;
   }
 
   createPhotographFilterSection2() {
@@ -10,15 +11,16 @@ class PhotographerSection2 {
     const photographerFilter = `
       <div class='container-btn-select'>
         <label for="sort-select">Trier par : </label>
-        <button id='btnFilter' type='button'>Popularité <i class="arrows fas fa-chevron-down"></i></button>
+        <button id='btnOpenFilter' type='button'>Popularité <i class="arrows fas fa-chevron-down"></i></button>
       </div>
 
        <div class='container-select'>
           <ul>
-            <li aria-current="true">Popularité <i class="arrows fas fa-chevron-up"></i></li>
-            <li>Date</li>
-            <li>Titre</li>
+            <li id='popularité' aria-current="true">Popularité</li>
+            <li id='date' >Date</li>
+            <li id='titre'>Titre</li>
           </ul>
+          <span id='iconCloseFilter' class="arrows fas fa-chevron-up"></span>
        </div>
       `;
 
@@ -28,6 +30,9 @@ class PhotographerSection2 {
       const filter = new Filter();
       filter.openFilterInit();
       filter.closeFilterInit();
+      filter.filterPopularité(this._photographers, this._photographers2);
+      filter.filterDate(this._photographers, this._photographers2);
+      filter.filterTitre(this._photographers, this._photographers2);
     }, 50);
 
     return photograph_section2;

@@ -501,7 +501,7 @@ header {
   padding-left: 15px;
   padding-right: 15px;
   right: 0px;
-  bottom: -10em;
+  bottom: -156px;
   cursor: pointer;
 }
 
@@ -525,6 +525,16 @@ header {
   position: absolute;
   right: 22px;
   top: 17px;
+}
+
+#iconCloseFilter {
+  position: absolute;
+  left: -40px;
+  bottom: -9px;
+  color: var(--text-color-btn);
+  font-weight: 900;
+  font-size: 18px;
+  cursor: pointer;
 }
 
 /* Section 3 */
