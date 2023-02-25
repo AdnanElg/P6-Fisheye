@@ -636,15 +636,21 @@ header {
   width: 40%;
 }
 
-@media screen and (max-width: 1600px) {
-  .modal {
-    width: 50%;
-  }
-}
-
 @media screen and (max-width: 1300px) {
   .modal {
     width: 60%;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .modal {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 685px) {
+  .modal {
+    width: 90%;
   }
 }
 
@@ -654,6 +660,7 @@ header {
   align-items: flex-start;
   margin-top: 5px;
   margin-bottom: 5px;
+  position: relative;
 }
 
 .modal header h2 {
@@ -663,8 +670,72 @@ header {
   margin-top: 0px;
 }
 
+@media screen and (max-width: 2560px) {
+  .modal header h2 {
+    font-size: 40px;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .modal header h2 {
+    font-size: 40px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .modal header h2 {
+    text-align: center;
+    margin-top: -11px;
+    margin-left: 60px;
+    font-size: 28px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .modal header h2 {
+    font-size: 30px;
+    text-align: center;
+    margin-top: 30px;
+    margin-left: 43px;
+  }
+}
+
 .modal header img {
   cursor: pointer;
+}
+
+@media screen and (max-width: 2560px) {
+  .modal header img {
+    height: 25px;
+  }
+}
+
+@media screen and (max-width: 993px) {
+  .modal header img {
+    position: absolute;
+    left: 93%;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .modal header img {
+    height: 30px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .modal header img {
+    top: -8%;
+    height: 25%;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .modal header img {
+    top: -8%;
+    left: 94%;
+    height: 18%;
+  }
 }
 
 form {
@@ -673,26 +744,68 @@ form {
   gap: 15px;
 }
 
+@media screen and (max-width: 2560px) {
+  form {
+    gap: 0px;
+  }
+}
+
 form label {
   color: var(--text-color-tertiary);
   padding-bottom: 5px;
   font-size: 36px;
 }
 
+@media screen and (max-width: 2560px) {
+  form label {
+    font-size: 22px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  form label {
+    font-size: 20px;
+  }
+}
+
 form input {
   width: 100%;
   height: 50px;
   border: none;
-  font-size: 25px;
+  font-size: 22px;
   border-radius: 5px;
+}
+
+@media screen and (max-width: 2560px) {
+  form input {
+    height: 40px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  form input {
+    height: 37px;
+  }
 }
 
 form textarea {
   width: 100%;
   height: 120px;
   border: none;
-  font-size: 25px;
+  font-size: 22px;
   border-radius: 5px;
+}
+
+@media screen and (max-width: 2560px) {
+  form textarea {
+    height: 110px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  form textarea {
+    height: 80px;
+  }
 }
 
 form .container-firstName {
@@ -724,7 +837,7 @@ form .container-message {
   margin-bottom: 30px;
 }
 
-.contact_button {
+#submit_form {
   font-size: 20px;
   font-weight: bold;
   padding: 11px;
@@ -735,4 +848,20 @@ form .container-message {
   background-color: var(--text-color-secondary);
   border-radius: 5px;
   cursor: pointer;
+}
+
+@media screen and (max-width: 2560px) {
+  #submit_form {
+    font-size: 18px;
+    width: 140px;
+    height: 60px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  #submit_form {
+    font-size: 17px;
+    width: 120px;
+    height: 50px;
+  }
 }
