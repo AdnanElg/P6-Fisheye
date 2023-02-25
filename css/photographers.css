@@ -512,6 +512,11 @@ header {
   color: var(--text-color-btn);
 }
 
+.container-select ul li:hover {
+  color: var(--text-color-tertiary);
+  font-weight: bold;
+}
+
 .container-select ul li:nth-child(3) {
   border-bottom: none;
 }
@@ -585,6 +590,12 @@ header {
   font-weight: 400;
   font-size: 15px;
   color: var(--text-color-secondary);
+}
+
+@media screen and (max-width: 320px) {
+  .article_title {
+    font-size: 14px;
+  }
 }
 
 .articles_likes span {
@@ -693,10 +704,10 @@ header {
 
 @media screen and (max-width: 320px) {
   .modal header h2 {
-    font-size: 30px;
+    font-size: 25px;
     text-align: center;
     margin-top: 30px;
-    margin-left: 43px;
+    margin-left: 55px;
   }
 }
 

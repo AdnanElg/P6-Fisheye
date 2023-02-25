@@ -10,7 +10,7 @@ class PhotographerSection2 {
     const photographerFilter = `
       <div class='container-btn-select'>
         <label for="sort-select">Trier par : </label>
-        <button type='button'>Popularité <i class="arrows fas fa-chevron-down"></i></button>
+        <button id='btnFilter' type='button'>Popularité <i class="arrows fas fa-chevron-down"></i></button>
       </div>
 
        <div class='container-select'>
@@ -23,6 +23,12 @@ class PhotographerSection2 {
       `;
 
     photograph_section2.innerHTML = photographerFilter;
+
+    setTimeout(() => {
+      const filter = new Filter();
+      filter.openFilterInit();
+      filter.closeFilterInit();
+    }, 50);
 
     return photograph_section2;
   }
