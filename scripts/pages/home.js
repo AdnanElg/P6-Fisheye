@@ -1,7 +1,7 @@
 class Home {
   constructor() {
     this.photographer_home = document.querySelector(".photographer_section");
-    this.dataApi = new DataApi("./data/photographers.json");
+    this.dataApi = new DataApi("../data/photographers.json");
   }
 
   async main() {
