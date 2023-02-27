@@ -1,6 +1,7 @@
 class PhotographerSection3 {
   constructor(photographerDataMediaById, photographerDataById) {
     this._photographers = photographerDataMediaById;
+    console.log(this._photographers);
     this._photographers2 = photographerDataById;
   }
 
@@ -26,16 +27,25 @@ class PhotographerSection3 {
           <figcaption>
             <p class='article_title'>${this._photographers.title}</p>
             <div class='articles_likes'>
-              <span aria-label='Nombre de likes : ${
+              <span class='countLikes-${
                 this._photographers.likes
-              }'>${this._photographers.likes}</span>
-              <i class="heart fas fa-heart"></i>
+              }'  aria-label='Nombre de likes : ${this._photographers.likes}'>${
+      this._photographers.likes
+    }</span>
+              <i id='likes-${
+                this._photographers.likes
+              }' class="heart fas fa-heart"></i>
             </div>
           </figcaption>
       </figure>
     `;
 
     photograph_section3.innerHTML = photographerArticle;
+
+    setTimeout(() => {
+      const countLike = new Likes(this._photographers.likes);
+      countLike.counterLike(this._photographers.likes);
+    }, 50);
 
     return photograph_section3;
   }

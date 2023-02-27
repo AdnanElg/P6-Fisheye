@@ -383,9 +383,15 @@ header {
   }
 }
 
-@media screen and (max-width: 350px) {
+@media screen and (max-width: 381px) {
   .picture_profil_photographer img {
     left: 6em;
+  }
+}
+
+@media screen and (max-width: 393px) {
+  .picture_profil_photographer img {
+    left: 7em;
   }
 }
 
@@ -644,11 +650,12 @@ header {
 }
 
 .modal {
+  max-height: calc(100vh - 210px);
+  overflow-y: auto;
   position: fixed;
   top: 50%;
   left: 50%;
   translate: -50% -50%;
-  overflow: hidden;
   background-color: var(--bg-color-likes);
   color: var(--text-color-tertiary);
   padding: 15px;
