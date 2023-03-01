@@ -48,7 +48,7 @@ header {
 
 @media screen and (max-width: 549px) {
   .logo {
-    width: 38%;
+    width: 50%;
   }
 }
 
@@ -60,7 +60,15 @@ header {
 
 @media screen and (max-width: 320px) {
   .logo {
-    width: 60%;
+    width: 77%;
+    padding-left: 0em;
+  }
+}
+
+@media screen and (max-width: 240px) {
+  .logo {
+    width: 81%;
+    padding-left: 0em;
   }
 }
 
@@ -236,6 +244,18 @@ header {
   }
 }
 
+@media screen and (max-width: 240px) {
+  .btn_contact {
+    padding-left: 1em;
+  }
+}
+
+@media screen and (max-width: 240px) {
+  .btn_contact button {
+    font-size: 14px;
+  }
+}
+
 .picture_profil_photographer img {
   height: 220px;
   width: 220px;
@@ -365,6 +385,12 @@ header {
   }
 }
 
+@media screen and (max-width: 480px) {
+  .picture_profil_photographer img {
+    left: 10em;
+  }
+}
+
 @media screen and (max-width: 470px) {
   .picture_profil_photographer img {
     left: 9em;
@@ -395,6 +421,12 @@ header {
   }
 }
 
+@media screen and (max-width: 360px) {
+  .picture_profil_photographer img {
+    left: 6em;
+  }
+}
+
 @media screen and (max-width: 330px) {
   .picture_profil_photographer img {
     left: 5em;
@@ -404,6 +436,18 @@ header {
 @media screen and (max-width: 330px) {
   .picture_profil_photographer img {
     left: 5em;
+  }
+}
+
+@media screen and (max-width: 280px) {
+  .picture_profil_photographer img {
+    left: 60px;
+  }
+}
+
+@media screen and (max-width: 240px) {
+  .picture_profil_photographer img {
+    left: 40px;
   }
 }
 
@@ -468,6 +512,21 @@ header {
   color: var(--text-color-tertiary);
 }
 
+@media screen and (max-width: 280px) {
+  .sort-container .container-btn-select label {
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 280px) {
+  .sort-container .container-btn-select label {
+    font-size: 11px;
+  }
+  .sort-container .container-btn-select button {
+    font-size: 12px;
+  }
+}
+
 .container-btn-select button {
   margin-left: 30px;
   border: none;
@@ -478,6 +537,12 @@ header {
   cursor: pointer;
   color: var(--text-color-btn);
   padding-left: 30px;
+}
+
+@media screen and (max-width: 280px) {
+  .container-btn-select button {
+    font-size: 13px;
+  }
 }
 
 .container-btn-select button i {
@@ -510,12 +575,23 @@ header {
   bottom: -156px;
   cursor: pointer;
 }
+@media screen and (max-width: 280px) {
+  .container-select ul {
+    width: 7em;
+  }
+}
 
 .container-select ul li {
   line-height: 55px;
   border-bottom: solid 1px var(--text-color-btn);
   font-size: 18px;
   color: var(--text-color-btn);
+}
+
+@media screen and (max-width: 280px) {
+  .container-select ul li {
+    font-size: 15px;
+  }
 }
 
 .container-select ul li:hover {
@@ -589,10 +665,28 @@ header {
 
 @media screen and (max-width: 320px) {
   .section3_articles figure img {
-    max-width: 250px;
+    max-width: 240px;
   }
   .section3_articles figure video {
-    max-width: 250px;
+    max-width: 240px;
+  }
+}
+
+@media screen and (max-width: 280px) {
+  .section3_articles figure img {
+    max-width: 200px;
+  }
+  .section3_articles figure video {
+    max-width: 200px;
+  }
+}
+
+@media screen and (max-width: 240px) {
+  .section3_articles figure img {
+    max-width: 160px;
+  }
+  .section3_articles figure video {
+    max-width: 160px;
   }
 }
 
@@ -635,6 +729,20 @@ header {
   padding: 0 10px;
   font-weight: 600;
   border-radius: 5px;
+}
+
+@media screen and (max-width: 280px) {
+  .container-total {
+    right: 20px;
+    width: 200px;
+  }
+}
+
+@media screen and (max-width: 240px) {
+  .container-total {
+    right: 10px;
+    width: 186px;
+  }
 }
 
 /* Modal */
@@ -723,8 +831,9 @@ header {
   .modal header h2 {
     font-size: 25px;
     text-align: center;
-    margin-top: 30px;
-    margin-left: 55px;
+    margin-top: 2px;
+    margin-left: 26px;
+    margin-bottom: 23px;
   }
 }
 

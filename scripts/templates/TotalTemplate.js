@@ -21,18 +21,19 @@ class PhotographerSection4 {
 
     photograph_section4.innerHTML = photographerTotal;
 
-    for (let i = 0; i < this._photographers.length; i++) {
-      setTimeout(() => {
+    setTimeout(() => {
+      for (let i = 0; i < this._photographers.length; i++) {
         const sommesCountLikes = new Likes(
           this._photographers[i].likes,
           this.sommesLikes
         );
+
         sommesCountLikes.counterLike(
           this._photographers[i].likes,
           this.sommesLikes
         );
-      }, 50);
-    }
+      }
+    }, 50);
 
     return photograph_section4;
   }
