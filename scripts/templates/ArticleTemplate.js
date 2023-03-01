@@ -1,7 +1,6 @@
 class PhotographerSection3 {
   constructor(photographerDataMediaById, photographerDataById) {
     this._photographers = photographerDataMediaById;
-    console.log(this._photographers);
     this._photographers2 = photographerDataById;
   }
 
