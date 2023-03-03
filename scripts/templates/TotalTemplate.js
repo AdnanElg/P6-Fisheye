@@ -15,7 +15,7 @@ class PhotographerSection4 {
     photograph_section4.classList.add("container-total");
 
     const photographerTotal = `
-        <span aria-label= "Nombre de likes : ${this.sommesLikes}" id='sommeslikes-${this.sommesLikes}'>${this.sommesLikes} <i class="heart fas fa-heart"></i></span> 
+        <span aria-label= "Nombre de likes : ${this.sommesLikes}" id='sommeslikes' data-likes="${this.sommesLikes}"><span>${this.sommesLikes}</span> <i class="heart fas fa-heart"></i></span> 
         <span aria-label= "Prix : ${this._photographers2.price} euros par jour">${this._photographers2.price}€ / jours</span>
     `;
 
@@ -24,13 +24,11 @@ class PhotographerSection4 {
     setTimeout(() => {
       for (let i = 0; i < this._photographers.length; i++) {
         const sommesCountLikes = new Likes(
-          this._photographers[i].likes,
-          this.sommesLikes
-        );
+          this._photographers[i].likes
+          );
 
         sommesCountLikes.counterLike(
-          this._photographers[i].likes,
-          this.sommesLikes
+          this._photographers[i].likes
         );
       }
     }, 50);

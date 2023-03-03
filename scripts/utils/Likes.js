@@ -1,8 +1,7 @@
 class Likes {
-  constructor(photographerDataLikes, photographerSommesDataLikes) {
+  constructor(photographerDataLikes) {
+ 
     this._isLiked = false;
-
-    this._totalLikes = 0;
 
     this._toggleLike = document.querySelector(
       `#likes-${photographerDataLikes}`
@@ -12,26 +11,39 @@ class Likes {
       `.countLikes-${photographerDataLikes}`
     );
 
-    this._totalCountLikes = document.querySelector(
-      `#sommeslikes-${photographerSommesDataLikes}`
-    );
+    this._totalCountLikes = document.querySelector(`#sommeslikes`);
   }
 
-  counterLike(photographerDataLikes, photographerSommesDataLikes) {
+  counterLike(photographerDataLikes) {
     this._toggleLike.addEventListener("click", (e) => {
       e.preventDefault();
       if (this._isLiked) {
         photographerDataLikes -= 1;
-        photographerSommesDataLikes -= photographerDataLikes;
+        this.decrementTotalLikes();
         this._isLiked = false;
       } else {
         photographerDataLikes += 1;
-        photographerSommesDataLikes += photographerDataLikes;
+        this.incrementTotalLikes();
         this._isLiked = true;
       }
 
       this._countLikes.innerHTML = `<span>${photographerDataLikes}</span>`;
-      this._totalCountLikes.innerHTML = `<span aria-label= "Nombre de likes : ${photographerSommesDataLikes}" id='sommeslikes-${photographerSommesDataLikes}'>${photographerSommesDataLikes} <i class="heart fas fa-heart"></i></span>`;
     });
+  }
+
+  incrementTotalLikes() {
+    let totalLikes = this._totalCountLikes.dataset.likes;
+    totalLikes = parseInt(totalLikes) + 1;
+
+    this._totalCountLikes.dataset.likes = totalLikes;
+    this._totalCountLikes.innerHTML = `<span aria-label= "Nombre de likes : ${totalLikes}" id='sommeslikes' data-likes="${totalLikes}"><span>${totalLikes}</span> <i class="heart fas fa-heart"></i></span> `;
+  }
+
+  decrementTotalLikes() {
+    let totalLikes = this._totalCountLikes.dataset.likes;
+    totalLikes = parseInt(totalLikes) - 1;
+    
+    this._totalCountLikes.dataset.likes = totalLikes;
+    this._totalCountLikes.innerHTML = `<span aria-label= "Nombre de likes : ${totalLikes}" id='sommeslikes' data-likes="${totalLikes}"><span>${totalLikes}</span> <i class="heart fas fa-heart"></i></span> `;
   }
 }

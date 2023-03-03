@@ -17,7 +17,7 @@ body {
   --text-color-quaternary: #525252;
   --text-color-btn: #ffffff;
   --text-background-color: #fafafa;
-  --bg-color-likes: #DB8876;
+  --bg-color-likes: #db8876;
 }
 
 header {
@@ -126,7 +126,7 @@ h1 {
 }
 
 @media screen and (max-width: 325px) {
-.photographer_section .card_profile .card_picture {
+  .photographer_section .card_profile .card_picture {
     height: 150px;
     width: 150px;
   }
@@ -142,15 +142,14 @@ h1 {
 
 @media screen and (max-width: 325px) {
   .photographer_section .card_profile .card_name {
-     font-size: 25px;
-    }
+    font-size: 25px;
   }
+}
 
 .cards_info {
   text-align: center;
   line-height: 15px;
 }
-
 
 @media screen and (max-width: 515px) {
   .cards_info {

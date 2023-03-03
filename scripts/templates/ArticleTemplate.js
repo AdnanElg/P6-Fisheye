@@ -40,12 +40,7 @@ class PhotographerSection3 {
     `;
 
     photograph_section3.innerHTML = photographerArticle;
-
-    setTimeout(() => {
-      const countLike = new Likes(this._photographers.likes);
-      countLike.counterLike(this._photographers.likes);
-    }, 50);
-
+    
     return photograph_section3;
   }
 }

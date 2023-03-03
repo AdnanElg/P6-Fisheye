@@ -13,7 +13,6 @@ class PhotographerSection2 {
         <label for="sort-select">Trier par : </label>
         <button id='btnOpenFilter' type='button'>Popularité <i class="arrows fas fa-chevron-down"></i></button>
       </div>
-
        <div class='container-select'>
           <ul>
             <li id='popularité' aria-current="true">Popularité</li>
