@@ -18,9 +18,9 @@ class PhotographerSection3 {
       <figure>
           ${
             media.type === "image"
-              ? `<img alt="${media.alt}" src="${media.src}">`
+              ? `<img class='openLightBoxImg' data-likes="${media.src}" alt="${media.alt}" src="${media.src}">`
               : media.type === "video"
-              ? `<video  title="${media.alt}" aria-label="${media.alt}" src="${media.src}"></video>`
+              ? `<video class='openLightBoxVideo' title="${media.alt}" aria-label="${media.alt}" src="${media.src}"></video>`
               : ""
           }
           <figcaption>
@@ -40,7 +40,12 @@ class PhotographerSection3 {
     `;
 
     photograph_section3.innerHTML = photographerArticle;
-    
+
+    setTimeout(() => {
+      const lightBox = new LightBox(this._photographers);
+      lightBox.openLightBoxInit(this._photographers);
+    }, 50);
+
     return photograph_section3;
   }
 }
