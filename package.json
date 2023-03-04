@@ -18,8 +18,19 @@
   "homepage": "https://github.com/AdnanElg/P6-Fisheye#readme",
   "devDependencies": {
     "autoprefixer": "^10.4.13",
+    "browserslist": "^4.21.5",
     "cssnano": "^5.1.15",
     "postcss": "^8.4.21",
     "postcss-cli": "^10.1.0"
-  }
+  },
+  "browserslist": [
+    "last 2 versions",
+    "not dead",
+    "not < 0.2%",
+    "Chrome >= 60",
+    "Safari >= 10.1",
+    "iOS >= 10.3",
+    "Firefox >= 54",
+    "Edge >= 15"
+  ]
 }
