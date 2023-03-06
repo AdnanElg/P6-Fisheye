@@ -27,6 +27,7 @@ class PhotographerSection2 {
 
     setTimeout(() => {
       const filter = new Filter();
+
       filter.openFilterInit();
       filter.closeFilterInit();
       filter.filterPopularité(this._photographers, this._photographers2);

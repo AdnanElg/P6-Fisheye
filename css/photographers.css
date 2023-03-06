@@ -1002,3 +1002,70 @@ form .container-message {
     height: 50px;
   }
 }
+
+#lightBox {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-lightBox {
+  position: fixed;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  background-color: var(--text-color-btn);
+  padding: 70px;
+  border-radius: 5px;
+  box-shadow: 0px 2px 8px var(--text-color-tertiary);
+  width: 50%;
+  padding-bottom: 10px;
+}
+
+.btnCloseLightBox {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  position: absolute;
+  font-size: 35px;
+  left: 94%;
+  top: 1%;
+  color: var(--text-color-secondary);
+}
+
+.button-previous {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  position: absolute;
+  top: 45%;
+  left: 1%;
+  font-size: 35px;
+  color: var(--text-color-secondary);
+}
+
+.button-next {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  position: absolute;
+  font-size: 35px;
+  left: 95%;
+  top: 45%;
+  color: var(--text-color-secondary);
+}
+
+.lightbox__container img {
+  width: 100%;
+}
+
+.lightbox__container video {
+  width: 100%;
+}
+
+.lightbox__container .lightbox__title {
+  color: var(--text-color-secondary);
+  font-size: 20px;
+}

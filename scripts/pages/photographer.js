@@ -8,6 +8,7 @@ class Photographer {
     this.photograph_article = document.querySelector(".photograph_section3");
     this.photograph_total = document.querySelector(".photograph_section4");
     this.photograph_modal = document.querySelector("#contact_modal");
+    this.photograph_lightBox = document.querySelector("#lightBox");
 
     this.dataApi = new DataApi(`../data/photographers.json`);
   }
@@ -45,6 +46,11 @@ class Photographer {
 
     const templateModal = new PhotographerModale(photographerDataById);
 
+    const templateLightBox = new PhotographerLightBox(
+      photographerDataMediaById,
+      photographerDataById
+    );
+
     this.photograph_header.append(
       templateHeaderSection1.createPhotographHeaderSection1()
     );
@@ -58,6 +64,10 @@ class Photographer {
     );
 
     this.photograph_modal.append(templateModal.createPhotographerModale());
+
+    this.photograph_lightBox.append(
+      templateLightBox.createPhotographerLightBox()
+    );
   }
 }
 

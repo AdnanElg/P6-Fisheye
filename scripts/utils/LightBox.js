@@ -1,22 +1,30 @@
 class LightBox {
-  constructor() {
-    this._openLightBoxImg = document.querySelectorAll(".openLightBoxImg");
-    this._openLightBoxVideo = document.querySelectorAll(".openLightBoxVideo");
+  constructor(photographerDataMediaById, photographerDataById) {
+    this._lightBoxImg = document.getElementById(
+      `LightBoxImg-${photographerDataMediaById.id}`
+    );
+
+    this._btnOpenLightBoxImg = document.querySelector(
+      `#openLightBoxImg-${photographerDataMediaById.id}`
+    );
+
+    this._lightBox = document.querySelector("#lightBox");
+
+    this._btnCloseLightBox = document.querySelector(".btnCloseLightBox");
   }
 
-  openLightBoxInit() {
-    this._openLightBoxImg.forEach((img) => {
-      img.addEventListener("click", (e) => {
-        e.preventDefault();
-        console.log(this._openLightBoxImg);
-      });
+  openLightBox(photographerDataMediaById, photographerDataById) {
+    this._btnOpenLightBoxImg.addEventListener("click", (e) => {
+      e.preventDefault();
+      this._lightBox.style.display = "block";
+      this._lightBoxImg.src = `../assets/profil_photographers/${photographerDataById.name}/${photographerDataMediaById.image}`;
     });
+  }
 
-    this._openLightBoxVideo.forEach((video) => {
-      video.addEventListener("click", (e) => {
-        e.preventDefault();
-        console.log(this._openLightBoxVideo);
-      });
+  closeLightBox() {
+    this._btnCloseLightBox.addEventListener("click", (e) => {
+      e.preventDefault();
+      this._lightBox.style.display = "none";
     });
   }
 }

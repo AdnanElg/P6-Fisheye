@@ -1,7 +1,8 @@
 class Likes {
   constructor(photographerDataLikes) {
- 
     this._isLiked = false;
+
+    this._totalLikes = 0;
 
     this._toggleLike = document.querySelector(
       `#likes-${photographerDataLikes}`
@@ -35,15 +36,22 @@ class Likes {
     let totalLikes = this._totalCountLikes.dataset.likes;
     totalLikes = parseInt(totalLikes) + 1;
 
+    this._totalCountLikes.setAttribute(
+      "aria-label",
+      `Nombre de likes : ${totalLikes}`
+    );
+    this._totalCountLikes.querySelector(".nbTotalLikes").innerHTML = totalLikes;
     this._totalCountLikes.dataset.likes = totalLikes;
-    this._totalCountLikes.innerHTML = `<span aria-label= "Nombre de likes : ${totalLikes}" id='sommeslikes' data-likes="${totalLikes}"><span>${totalLikes}</span> <i class="heart fas fa-heart"></i></span> `;
   }
 
   decrementTotalLikes() {
     let totalLikes = this._totalCountLikes.dataset.likes;
     totalLikes = parseInt(totalLikes) - 1;
-    
+    this._totalCountLikes.setAttribute(
+      "aria-label",
+      `Nombre de likes : ${totalLikes}`
+    );
+    this._totalCountLikes.querySelector(".nbTotalLikes").innerHTML = totalLikes;
     this._totalCountLikes.dataset.likes = totalLikes;
-    this._totalCountLikes.innerHTML = `<span aria-label= "Nombre de likes : ${totalLikes}" id='sommeslikes' data-likes="${totalLikes}"><span>${totalLikes}</span> <i class="heart fas fa-heart"></i></span> `;
   }
 }
