@@ -20,7 +20,7 @@ class PhotographerSection3 {
             media.type === "image"
               ? `<img id="openLightBoxImg-${this._photographers.id}" alt="${media.alt}" src="${media.src}">`
               : media.type === "video"
-              ? `<video id="openLightBoxVideo-${this._photographers.id}" title="${media.alt}" aria-label="${media.alt}" src="${media.src}"></video>`
+              ? `<video id="openLightBoxVideo-${this._photographers.id}" title="${media.alt}" aria-label="${media.alt}"  src="${media.src}"></video>`
               : ""
           }
           <figcaption>
