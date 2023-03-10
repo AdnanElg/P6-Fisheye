@@ -13,10 +13,11 @@ class PhotographerSection4 {
   createPhotographTotalSection4() {
     const photograph_section4 = document.createElement("div");
     photograph_section4.classList.add("container-total");
+    photograph_section4.setAttribute("tabindex", "0");
 
     const photographerTotal = `
-        <span aria-label= "Nombre de likes : ${this.sommesLikes}" id='sommeslikes' data-likes="${this.sommesLikes}"><span class="nbTotalLikes">${this.sommesLikes}</span> <i class="heart fas fa-heart"></i></span> 
-        <span aria-label= "Prix : ${this._photographers2.price} euros par jour">${this._photographers2.price}€ / jours</span>
+        <span tabindex="0" aria-label= "Nombre de likes : ${this.sommesLikes}" id='sommeslikes' data-likes="${this.sommesLikes}"><span class="nbTotalLikes">${this.sommesLikes}</span> <i aria-label="Icône de cœur" class="heart fas fa-heart"></i></span> 
+        <span tabindex="0" aria-label= "Prix : ${this._photographers2.price} euros par jour">${this._photographers2.price}€ / jours</span>
     `;
 
     photograph_section4.innerHTML = photographerTotal;

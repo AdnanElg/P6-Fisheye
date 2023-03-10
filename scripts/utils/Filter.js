@@ -26,6 +26,7 @@ class Filter {
   filterPopularité(photographerDataMediaById, photographerDataById) {
     this._filterPopularité.addEventListener("click", (e) => {
       e.preventDefault();
+
       const sorteByPopularity = photographerDataMediaById.sort(
         (a, b) => b.likes - a.likes
       );
@@ -53,6 +54,7 @@ class Filter {
   filterDate(photographerDataMediaById, photographerDataById) {
     this._filterDate.addEventListener("click", (e) => {
       e.preventDefault();
+
       const sorteByDate = photographerDataMediaById.sort((a, b) => {
         const dateA = new Date(a.date);
         const dateB = new Date(b.date);
@@ -82,6 +84,7 @@ class Filter {
   filterTitre(photographerDataMediaById, photographerDataById) {
     this._filterTitre.addEventListener("click", (e) => {
       e.preventDefault();
+
       const sorteByTitre = photographerDataMediaById.sort((a, b) =>
         a.title.localeCompare(b.title)
       );

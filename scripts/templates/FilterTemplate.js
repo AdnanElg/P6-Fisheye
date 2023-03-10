@@ -10,14 +10,14 @@ class PhotographerSection2 {
 
     const photographerFilter = `
       <div class='container-btn-select'>
-        <label for="sort-select">Trier par : </label>
-        <button id='btnOpenFilter' type='button'>Popularité <i class="arrows fas fa-chevron-down"></i></button>
+        <label tabindex="0" for="sort-select">Trier par : </label>
+        <button id='btnOpenFilter' aria-label='Bouton pour ouvrir le menu déroulant' type='button'>Popularité <i class="arrows fas fa-chevron-down"></i></button>
       </div>
-       <div class='container-select'>
-          <ul>
-            <li id='popularité' aria-current="true">Popularité</li>
-            <li id='date' >Date</li>
-            <li id='titre'>Titre</li>
+       <div class='container-select' aria-expanded="false" aria-labelledby="btnOpenFilter">
+          <ul role="menu" tabindex="0">
+            <li id='popularité' tabindex="0" role="menuitem" aria-current="true">Popularité</li>
+            <li id='date' tabindex="0" role="menuitem">Date</li>
+            <li id='titre' tabindex="0" role="menuitem">Titre</li>
           </ul>
           <span id='iconCloseFilter' class="arrows fas fa-chevron-up"></span>
        </div>

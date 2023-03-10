@@ -575,6 +575,7 @@ header {
   bottom: -156px;
   cursor: pointer;
 }
+
 @media screen and (max-width: 280px) {
   .container-select ul {
     width: 7em;
@@ -754,7 +755,7 @@ header {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: var(--bg-colors-modale)
 }
 
 .modal {
@@ -829,11 +830,11 @@ header {
 
 @media screen and (max-width: 320px) {
   .modal header h2 {
-    font-size: 25px;
+    font-size: 28px;
     text-align: center;
     margin-top: 2px;
     margin-left: 26px;
-    margin-bottom: 23px;
+    margin-bottom: 30px;
   }
 }
 
@@ -1010,7 +1011,7 @@ form .container-message {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: var(--bg-colors-modale);
 }
 
 .modal-lightBox {
@@ -1082,13 +1083,14 @@ form .container-message {
 }
 
 .btnCloseLightBox {
-  background-color: rgba(0, 0, 0, 0);
+  background-color: var(--bg-colorrs-close);
   border: none;
   position: absolute;
   font-size: 35px;
   left: 92%;
   top: 1%;
   color: var(--text-color-secondary);
+  cursor: pointer;
 }
 
 @media screen and (max-width: 2560px) {
@@ -1134,17 +1136,18 @@ form .container-message {
 }
 
 .button-previous {
-  background-color: rgba(0, 0, 0, 0);
+  background-color: var(--bg-colorrs-close);
   border: none;
   position: absolute;
   top: 45%;
   left: 2%;
   font-size: 35px;
   color: var(--text-color-secondary);
+  cursor: pointer;
 }
 
 @media screen and (max-width: 2560px) {
-  .button-previous  {
+  .button-previous {
     left: 2%;
   }
 }
@@ -1156,13 +1159,14 @@ form .container-message {
 }
 
 .button-next {
-  background-color: rgba(0, 0, 0, 0);
+  background-color: var(--bg-colorrs-close);
   border: none;
   position: absolute;
   font-size: 35px;
   left: 91%;
   top: 45%;
   color: var(--text-color-secondary);
+  cursor: pointer;
 }
 
 @media screen and (max-width: 2560px) {

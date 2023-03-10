@@ -9,33 +9,34 @@ class PhotographerModale {
 
     const modalePhotographer = `
             <header>
-                <h2>Contactez-moi <br> ${this._photographers.name}</h2>
+                <h2 tabindex="0">Contactez-moi <br> ${this._photographers.name}</h2>
                 <img
                     id="btnCloseModale"
                     src="../assets/icons/close.svg"
                     alt="Icône de fermeture"
+                    tabindex="0"
                 />
             </header>
             <form>
                 <div class="container-firstName">
                     <label for="firstName">Prénom</label>
-                    <input id="firstName" aria-label="Champ de saisie du prénom" />
-                    <p id="firstNameError"><!-- ci est un message d'erreur --></p>
+                    <input id="firstName" aria-label="Champ de saisie du prénom" aria-invalid="false" aria-invalid="false" aria-describedby="firstNameError" />
+                    <p id="firstNameError" role="alert" aria-live="assertive" aria-atomic="true"><!-- ci est un message d'erreur --></p>
                 </div>
                 <div class="container-lastName">
                     <label for="lastName">Nom</label>
-                    <input id="lastName" aria-label="Champ de saisie du nom" />
-                    <p id="lastNameError"><!-- ci est un message d'erreur --></p>
+                    <input id="lastName" aria-label="Champ de saisie du nom" aria-invalid="false" aria-describedby="firstLastName" />
+                    <p id="lastNameError" role="alert" aria-live="assertive" aria-atomic="true"><!-- ci est un message d'erreur --></p>
                 </div>
                 <div class="container-email">
                     <label for="email">Email</label>
-                    <input id="email" aria-label="Champ de saisie de l'email" />
-                    <p id="emailError"><!-- ci est un message d'erreur --></p>
+                    <input id="email" aria-label="Champ de saisie de l'email" aria-invalid="false" aria-describedby="emailError"/>
+                    <p id="emailError" role="alert" aria-live="assertive" aria-atomic="true"><!-- ci est un message d'erreur --></p>
                 </div>
                 <div class="container-message">
                     <label for="message">Message</label>
-                    <textarea id="message" aria-label="Champ de saisie du message"></textarea>
-                    <p id="messageError"><!-- ci est un message d'erreur --></p>
+                    <textarea id="message" aria-label="Champ de saisie du message" aria-invalid="false" aria-describedby="messageError"></textarea>
+                    <p id="messageError" role="alert" aria-live="assertive" aria-atomic="true"><!-- ci est un message d'erreur --></p>
                 </div>
                 <button
                     type="button"

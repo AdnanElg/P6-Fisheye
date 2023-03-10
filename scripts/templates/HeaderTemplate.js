@@ -8,15 +8,15 @@ class PhotographerSection1 {
     photograph_section1.classList.add("section1_header_photographer");
 
     const photographerHeader = `
-        <div class='info_photographer' role="region">
-          <h2 class='info_name' aria-label="Nom du photographe">${this._photographers.name}</h2>
-          <span aria-hidden="true" class='info_country'>${this._photographers.country}, ${this._photographers.city}</span>
-          <p class='info_tagline' aria-label="Phrase d'accroche du photographe">${this._photographers.tagline}</p>
+        <div class='info_photographer' role="region" tabindex="0">
+          <h2 tabindex="0" class='info_name' aria-label="Nom du photographe">${this._photographers.name}</h2>
+          <span tabindex="0" aria-hidden="true" class='info_country'>${this._photographers.country}, ${this._photographers.city}</span>
+          <p tabindex="0" class='info_tagline' aria-label="Phrase d'accroche du photographe">${this._photographers.tagline}</p>
         </div>
-        <div class='btn_contact'>
+        <div class='btn_contact' tabindex="0">
           <button id='btnOpenModal' type="button" aria-label="Bouton pour contacter le photographe">Contactez-moi</button>
         </div>
-        <div class='picture_profil_photographer'>
+        <div class='picture_profil_photographer' tabindex="0">
           <img alt="Photo de profil de ${this._photographers.name}" aria-hidden="true"  class='info_picture' src="../assets/photo_profil_home/${this._photographers.portrait}">
         </div>
       `;

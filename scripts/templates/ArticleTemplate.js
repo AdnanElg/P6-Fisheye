@@ -15,25 +15,27 @@ class PhotographerSection3 {
     );
 
     const photographerArticle = `
-      <figure>
+      <figure title=${this._photographers.title} tabindex="0">
           ${
             media.type === "image"
-              ? `<img id="openLightBoxImg-${this._photographers.id}" alt="${media.alt}" src="${media.src}">`
+              ? `<img tabindex="0" id="openLightBoxImg-${this._photographers.id}" title='${media.alt}' alt="${media.alt}" src="${media.src}">`
               : media.type === "video"
-              ? `<video id="openLightBoxVideo-${this._photographers.id}" title="${media.alt}" aria-label="${media.alt}"  src="${media.src}"></video>`
+              ? `<video tabindex="0" id="openLightBoxVideo-${this._photographers.id}" title="${media.alt}" aria-label="${media.alt}"  src="${media.src}"></video>`
               : ""
           }
-          <figcaption>
-            <p class='article_title'>${this._photographers.title}</p>
+          <figcaption tabindex="0">
+            <p tabindex="0" class='article_title'>${
+              this._photographers.title
+            }</p>
             <div class='articles_likes'>
-              <span class='countLikes-${
+              <span tabindex="0" class='countLikes-${
                 this._photographers.likes
               }'  aria-label='Nombre de likes : ${this._photographers.likes}'>${
       this._photographers.likes
     }</span>
-              <i id='likes-${
+              <i tabindex="0" id='likes-${
                 this._photographers.likes
-              }' class="heart fas fa-heart"></i>
+              }' class="heart fas fa-heart" aria-label="Ajouter un like"></i>
             </div>
           </figcaption>
       </figure>
