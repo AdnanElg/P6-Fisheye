@@ -1,7 +1,11 @@
+// eslint-disable-next-line no-unused-vars
 class MediaFactory {
   createMedia(photographerDataMediaById, photographerDataById) {
+   
+    // eslint-disable-next-line no-prototype-builtins
     if (photographerDataMediaById.hasOwnProperty("image")) {
       return new ImageMedia(photographerDataMediaById, photographerDataById);
+    // eslint-disable-next-line no-prototype-builtins
     } else if (photographerDataMediaById.hasOwnProperty("video")) {
       return new VideoMedia(photographerDataMediaById, photographerDataById);
     } else {

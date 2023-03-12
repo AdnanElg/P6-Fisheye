@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 class PhotographerLightBox {
   constructor(photographerDataMediaById, photographerDataById) {
     this._photographers = photographerDataMediaById;
@@ -10,8 +11,8 @@ class PhotographerLightBox {
 
     const lightBoxPhotographer = `
   
-              <button tabindex="0" type="button" class="btnCloseLightBox" aria-label="Fermer la lightbox">
-                  <i class="fas fa-times" aria-hidden="true"></i>
+              <button type="button" class="btnCloseLightBox" aria-label="Fermer la lightbox">
+                  <i tabindex="0" class="fas fa-times" aria-hidden="true"></i>
               </button>
   
               <button tabindex="0" type="button" class="button-previous" aria-label="Précédent">
@@ -29,22 +30,15 @@ class PhotographerLightBox {
 
     setTimeout(() => {
       for (let i = 0; i < this._photographers.length; i++) {
-        const lightBox = new LightBox(this._photographers[i]);
-
-        lightBox.openLightBoxImg(this._photographers[i], this._photographers2);
-
-        lightBox.openLightBoxVideo(
+        // eslint-disable-next-line no-undef
+        const lightBox = new LightBox(
           this._photographers[i],
-          this._photographers2
+          this._photographers
         );
-
-        lightBox.nextLightBox(this._photographers[i], this._photographers2);
-
-        // lightBox.previousLightBox(this._photographers[i], this._photographers2);
-
-        lightBox.closeLightBox();
-
-        lightBox.displayMedia(this._photographers[i], this._photographers2);
+        lightBox.openLightBox(this._photographers[i], this._photographers2);
+        lightBox.closeOpenLightBox();
+        lightBox.btnNextMedia(this._photographers2);
+        lightBox.btnPreviousMedia(this._photographers2);
       }
     }, 50);
 

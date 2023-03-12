@@ -7,6 +7,7 @@ class Api {
     try {
       const res = await fetch(this._url);
       const data = await res.json();
+      console.log(data);
 
       const photographerAll = data.photographers;
       return photographerAll;
@@ -45,6 +46,7 @@ class Api {
   }
 }
 
+// eslint-disable-next-line no-unused-vars
 class DataApi extends Api {
   constructor(url) {
     super(url);

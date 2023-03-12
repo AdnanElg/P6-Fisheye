@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 class PhotographerSection1 {
   constructor(PhotographerDataById) {
     this._photographers = PhotographerDataById;
@@ -13,8 +14,8 @@ class PhotographerSection1 {
           <span tabindex="0" aria-hidden="true" class='info_country'>${this._photographers.country}, ${this._photographers.city}</span>
           <p tabindex="0" class='info_tagline' aria-label="Phrase d'accroche du photographe">${this._photographers.tagline}</p>
         </div>
-        <div class='btn_contact' tabindex="0">
-          <button id='btnOpenModal' type="button" aria-label="Bouton pour contacter le photographe">Contactez-moi</button>
+        <div class='btn_contact'>
+          <button tabindex="0" id='btnOpenModal' type="button" aria-label="Bouton pour contacter le photographe">Contactez-moi</button>
         </div>
         <div class='picture_profil_photographer' tabindex="0">
           <img alt="Photo de profil de ${this._photographers.name}" aria-hidden="true"  class='info_picture' src="../assets/photo_profil_home/${this._photographers.portrait}">

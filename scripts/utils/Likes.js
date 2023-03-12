@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 class Likes {
   constructor(photographerDataLikes) {
     this._isLiked = false;
@@ -28,7 +29,7 @@ class Likes {
         this._isLiked = true;
       }
 
-      this._countLikes.innerHTML = `<span>${photographerDataLikes}</span>`;
+      this._countLikes.innerHTML = `${photographerDataLikes}`;
     });
   }
 

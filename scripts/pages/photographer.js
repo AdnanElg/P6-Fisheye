@@ -10,6 +10,7 @@ class Photographer {
     this.photograph_modal = document.querySelector("#contact_modal");
     this.photograph_lightBox = document.querySelector("#lightBox");
 
+    // eslint-disable-next-line no-undef
     this.dataApi = new DataApi(`../data/photographers.json`);
   }
 
@@ -20,16 +21,19 @@ class Photographer {
       this.id
     );
 
+    // eslint-disable-next-line no-undef
     const templateHeaderSection1 = new PhotographerSection1(
       photographerDataById
     );
 
+    // eslint-disable-next-line no-undef
     const templatefilterSection2 = new PhotographerSection2(
       photographerDataMediaById,
       photographerDataById
     );
 
     for (let i = 0; i < photographerDataMediaById.length; i++) {
+      // eslint-disable-next-line no-undef
       const templateArticleSection3 = new PhotographerSection3(
         photographerDataMediaById[i],
         photographerDataById
@@ -39,13 +43,16 @@ class Photographer {
       );
     }
 
+    // eslint-disable-next-line no-undef
     const templateTotalSection4 = new PhotographerSection4(
       photographerDataMediaById,
       photographerDataById
     );
 
+    // eslint-disable-next-line no-undef
     const templateModal = new PhotographerModale(photographerDataById);
 
+    // eslint-disable-next-line no-undef
     const templateLightBox = new PhotographerLightBox(
       photographerDataMediaById,
       photographerDataById

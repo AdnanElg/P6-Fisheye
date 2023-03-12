@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 class PhotographerSection4 {
   constructor(photographerDataMediaById, photographerDataById) {
     this._photographers = photographerDataMediaById;
@@ -24,6 +25,7 @@ class PhotographerSection4 {
 
     setTimeout(() => {
       for (let i = 0; i < this._photographers.length; i++) {
+        // eslint-disable-next-line no-undef
         const sommesCountLikes = new Likes(this._photographers[i].likes);
         sommesCountLikes.counterLike(this._photographers[i].likes);
       }

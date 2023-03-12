@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 class Modal {
   constructor() {
     this._btnOpenModal = document.querySelector("#btnOpenModal");
@@ -21,10 +22,18 @@ class Modal {
       e.preventDefault();
       this._modalContact.style.display = "block";
     });
+    this._btnOpenModal.addEventListener("keydown", (e) => {
+      e.preventDefault();
+      this._modalContact.style.display = "block";
+    });
   }
 
   closeModalInit() {
     this._btnCloseModal.addEventListener("click", (e) => {
+      e.preventDefault();
+      this._modalContact.style.display = "none";
+    });
+    this._btnCloseModal.addEventListener("keydown", (e) => {
       e.preventDefault();
       this._modalContact.style.display = "none";
     });
@@ -81,6 +90,7 @@ class Modal {
 
     const emailControle = () => {
       if (
+        // eslint-disable-next-line no-useless-escape
         /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
           this._email.value.trim()
         )
@@ -106,6 +116,7 @@ class Modal {
 
     const messageControle = () => {
       if (
+        // eslint-disable-next-line no-useless-escape
         /^[a-zA-Z0-9~!@#$%^&*()`\[\]{};':,./<>?| ]{5,}$/.test(
           this._message.value.trim()
         )
