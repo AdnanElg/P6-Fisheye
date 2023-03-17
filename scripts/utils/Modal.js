@@ -1,45 +1,57 @@
 // eslint-disable-next-line no-unused-vars
 class Modal {
+  //? Création du constructeur pour initialiser les variables
   constructor() {
+    //? Sélectionner les boutons d'ouverture et de fermeture de la modale
     this._btnOpenModal = document.querySelector("#btnOpenModal");
     this._btnCloseModal = document.querySelector("#btnCloseModale");
+    //? Sélectionner la modale de contact
     this._modalContact = document.querySelector("#contact_modal");
+    //? Sélectionner le bouton de soumission du formulaire
     this._btnSubmitForm = document.querySelector("#submit_form");
-
+    //? Sélectionner les champs pour le prénom, le nom, l'email et le message
     this._firstName = document.querySelector("#firstName");
     this._lastName = document.querySelector("#lastName");
     this._email = document.querySelector("#email");
     this._message = document.querySelector("#message");
-
+    //? Sélectionner les éléments pour les messages d'erreur
     this._firstNameError = document.querySelector("#firstNameError");
     this._lastNameError = document.querySelector("#lastNameError");
     this._emailError = document.querySelector("#emailError");
     this._messageError = document.querySelector("#messageError");
   }
 
+  //? Fonction pour initialiser l'ouverture de la modale
   openModalInit() {
+    //? Ajouter un écouteur d'événement pour le clic sur le bouton d'ouverture de la modale
     this._btnOpenModal.addEventListener("click", (e) => {
       e.preventDefault();
       this._modalContact.style.display = "block";
     });
+    //? Ajouter un écouteur d'événement pour la touche "Entrée" sur le bouton d'ouverture de la modale
     this._btnOpenModal.addEventListener("keydown", (e) => {
       e.preventDefault();
       this._modalContact.style.display = "block";
     });
   }
 
+  //? Fonction pour initialiser la fermeture de la modale
   closeModalInit() {
+    //? Ajouter un écouteur d'événement pour le clic sur le bouton de fermeture de la modale
     this._btnCloseModal.addEventListener("click", (e) => {
       e.preventDefault();
       this._modalContact.style.display = "none";
     });
+    //? Ajouter un écouteur d'événement pour la touche "Entrée" sur le bouton de fermeture de la modale
     this._btnCloseModal.addEventListener("keydown", (e) => {
       e.preventDefault();
       this._modalContact.style.display = "none";
     });
   }
 
+  //? Fonction pour contrôler les saisies d'entrées de l'utilisateur en utilisant des expressions régulières
   controlRegExpInput() {
+    //? Fonction pour contrôler le prénom
     const firstNameControle = () => {
       if (
         /^([A-Za-z]{2,20})?([- ]{0,1})?([A-Za-z]{2,20})$/.test(
@@ -63,6 +75,7 @@ class Modal {
 
     this._firstName.addEventListener("input", firstNameControle);
 
+    //? Fonction pour contrôler le nom
     const lastNameControle = () => {
       if (
         /^([A-Za-z]{2,20})?([- ]{0,1})?([A-Za-z]{2,20})$/.test(
@@ -88,6 +101,7 @@ class Modal {
       lastNameControle();
     });
 
+    //? Fonction pour contrôler l'email
     const emailControle = () => {
       if (
         // eslint-disable-next-line no-useless-escape
@@ -114,6 +128,7 @@ class Modal {
       emailControle();
     });
 
+    //? Fonction pour contrôler le message
     const messageControle = () => {
       if (
         // eslint-disable-next-line no-useless-escape
@@ -140,6 +155,7 @@ class Modal {
       messageControle();
     });
 
+    //?Envoie du formulaire
     this._btnSubmitForm.addEventListener("click", (e) => {
       e.preventDefault();
       if (
