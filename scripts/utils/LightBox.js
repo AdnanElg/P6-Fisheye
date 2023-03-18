@@ -87,7 +87,7 @@ class LightBox {
       ${
         nextMedia.image
           ? `<img alt="${nextMedia.title}" aria-label="${nextMedia.title}" src="../assets/profil_photographers/${photographerDataById.name}/${nextMedia.image}">`
-          : `<video title="${nextMedia.title}" aria-label="${nextMedia.title}" src="../assets/profil_photographers/${photographerDataById.name}/${nextMedia.video}" controls></video>`
+          : `<video alt="${nextMedia.title}" aria-label="${nextMedia.title}" src="../assets/profil_photographers/${photographerDataById.name}/${nextMedia.video}" controls></video>`
       }
       <p tabindex="0" class="lightbox__title">${nextMedia.title}</p>
       `;
@@ -105,7 +105,7 @@ class LightBox {
         ${
           nextMedia.image
             ? `<img alt="${nextMedia.title}" aria-label="${nextMedia.title}" src="../assets/profil_photographers/${photographerDataById.name}/${nextMedia.image}">`
-            : `<video title="${nextMedia.title}" aria-label="${nextMedia.title}" src="../assets/profil_photographers/${photographerDataById.name}/${nextMedia.video}" controls></video>`
+            : `<video alt="${nextMedia.title}" aria-label="${nextMedia.title}" src="../assets/profil_photographers/${photographerDataById.name}/${nextMedia.video}" controls></video>`
         }
         <p tabindex="0" class="lightbox__title">${nextMedia.title}</p>
         `;
@@ -130,7 +130,7 @@ class LightBox {
       ${
         nextMedia.image
           ? `<img alt="${nextMedia.title}" aria-label="${nextMedia.title}" src="../assets/profil_photographers/${photographerDataById.name}/${nextMedia.image}">`
-          : `<video title="${nextMedia.title}" aria-label="${nextMedia.title}" src="../assets/profil_photographers/${photographerDataById.name}/${nextMedia.video}" controls></video>`
+          : `<video alt="${nextMedia.title}" aria-label="${nextMedia.title}" src="../assets/profil_photographers/${photographerDataById.name}/${nextMedia.video}" controls></video>`
       }
       <p tabindex="0" class="lightbox__title">${nextMedia.title}</p>
       `;
@@ -152,7 +152,7 @@ class LightBox {
         ${
           nextMedia.image
             ? `<img alt="${nextMedia.title}" aria-label="${nextMedia.title}" src="../assets/profil_photographers/${photographerDataById.name}/${nextMedia.image}">`
-            : `<video title="${nextMedia.title}" aria-label="${nextMedia.title}" src="../assets/profil_photographers/${photographerDataById.name}/${nextMedia.video}" controls></video>`
+            : `<video alt="${nextMedia.title}" aria-label="${nextMedia.title}" src="../assets/profil_photographers/${photographerDataById.name}/${nextMedia.video}" controls></video>`
         }
         <p tabindex="0" class="lightbox__title">${nextMedia.title}</p>
         `;

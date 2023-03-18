@@ -26,9 +26,9 @@ class PhotographerSection3 {
    
           ${
             media.type === "image"
-              ? `<img class='media-${this._photographers.id}' tabindex="0" title='${media.alt}' alt="${media.alt}" src="${media.src}">`
+              ? `<img class='media-${this._photographers.id}' tabindex="0" alt="${media.alt}" src="${media.src}">`
               : media.type === "video"
-              ? `<video class='media-${this._photographers.id}' tabindex="0" title="${media.alt}" aria-label="${media.alt}"  src="${media.src}"></video>`
+              ? `<video class='media-${this._photographers.id}' tabindex="0" alt="${media.alt}" aria-label="${media.alt}"  src="${media.src}"></video>`
               : ""
           }
    

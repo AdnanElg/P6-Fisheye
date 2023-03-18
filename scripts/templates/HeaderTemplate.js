@@ -14,7 +14,7 @@ class PhotographerSection1 {
     //? La variable photographerHeader contient une chaîne de caractères HTML qui sera insérée dans l'élément div créé précédemment.
     const photographerHeader = `
         <div class='info_photographer' role="region" tabindex="0">
-          <h2 tabindex="0" class='info_name' aria-label="Nom du photographe">${this._photographers.name}</h2>
+          <h1 tabindex="0" class='info_name' aria-label="Nom du photographe">${this._photographers.name}</h1>
           <span tabindex="0" aria-hidden="true" class='info_country'>${this._photographers.country}, ${this._photographers.city}</span>
           <p tabindex="0" class='info_tagline' aria-label="Phrase d'accroche du photographe">${this._photographers.tagline}</p>
         </div>

@@ -18,7 +18,7 @@ class PhotographerSection2 {
         <button id='btnOpenFilter' aria-label='Bouton pour ouvrir le menu déroulant' type='button'><span>Popularité</span><i tabindex="0" class="arrows fas fa-chevron-down"></i></button>
       </div>
        <div class='container-select' aria-expanded="false" aria-labelledby="btnOpenFilter">
-          <ul role="menu" tabindex="0">
+          <ul id="sort-select role="menu" tabindex="0">
             <li id='popularité' tabindex="0" role="menuitem" aria-current="true">Popularité</li>
             <li id='date' tabindex="0" role="menuitem">Date</li>
             <li id='titre' tabindex="0" role="menuitem">Titre</li>

@@ -30,7 +30,7 @@ class PhotographerModale {
                 </div>
                 <div class="container-lastName">
                     <label for="lastName">Nom</label>
-                    <input tabindex="0" id="lastName" aria-label="Champ de saisie du nom" aria-describedby="firstLastName" />
+                    <input tabindex="0" id="lastName" aria-label="Champ de saisie du nom" aria-describedby="lastNameError" />
                     <p id="lastNameError" role="alert" aria-live="assertive" aria-atomic="true"><!-- ci est un message d'erreur --></p>
                 </div>
                 <div class="container-email">
