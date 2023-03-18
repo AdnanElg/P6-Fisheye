@@ -36,6 +36,12 @@ class Filter {
       e.preventDefault();
       this._container_select.style.display = "block";
     });
+    this._btnFilterOpen.addEventListener("keydown", (e) => {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        this._container_select.style.display = "block";
+      }
+    });
   }
 
   //? Cette méthode initialise la fermeture du filtre lorsqu'on clique sur le bouton de fermeture
@@ -46,8 +52,8 @@ class Filter {
     });
 
     this._btnFilterClose.addEventListener("keydown", (e) => {
-      e.preventDefault();
-      this._container_select.style.display = "none";
+        e.preventDefault();
+        this._container_select.style.display = "none";
     });
   }
 
@@ -100,7 +106,7 @@ class Filter {
         photographerArticleList.appendChild(photographerArticle);
       });
 
-      //? Boucle pour chaque média du photographe
+      //? Boucle pour chaque média du photographe 
       for (let i = 0; i < photographerDataMediaById.length; i++) {
         // eslint-disable-next-line no-undef
         const lightBox = new LightBox(
@@ -116,10 +122,7 @@ class Filter {
         lightBox.closeOpenLightBox(); //? Ferme la lightbox
         lightBox.btnNextMedia(photographerDataById); //? Affiche le média suivant
         lightBox.btnPreviousMedia(photographerDataById); //? Affiche le média précédent
-      }
-
-      //? Boucle pour ajouter les likes sur chaque photo
-      for (let i = 0; i < photographerDataMediaById.length; i++) {
+      
         // eslint-disable-next-line no-undef
         const sommesCountLikes = new Likes(photographerDataMediaById[i].likes); //? "Likes" est une classe qui gère le comptage des likes d'un média.
         sommesCountLikes.counterLike(photographerDataMediaById[i].likes); //? En appelant la méthode "counterLike" pour chaque instance "sommesCountLikes" créée, on ajoute un compteur de likes pour chaque photo dans la page web.
@@ -128,55 +131,54 @@ class Filter {
 
     //? Écouteur d'événement pour la touche entrée sur le bouton de filtre par popularité
     this._filterPopularité.addEventListener("keydown", (e) => {
-      e.preventDefault();
-      //? Définit le filtre par popularité comme étant le filtre actif
-      this.setActiveFilter(this._filterPopularité);
-      //? Trie les médias par popularité (likes)
-      const sorteByPopularity = photographerDataMediaById.sort(
-        (a, b) => b.likes - a.likes
-      );
-      //? Sélectionne la section des articles de photographes
-      const photographerArticleList = document.querySelector(
-        ".photograph_section3"
-      );
-      //? Efface le contenu actuel de la section des articles de photographes
-      photographerArticleList.innerHTML = "";
-      //? Pour chaque média trié par popularité, crée un nouvel article de photographe et l'ajoute à la section des articles de photographes
-      sorteByPopularity.forEach((sorteDataByPopularité) => {
-        // eslint-disable-next-line no-undef
-        const newPhotographerArticleList = new PhotographerSection3(
-          sorteDataByPopularité,
-          photographerDataById
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        //? Définit le filtre par popularité comme étant le filtre actif
+        this.setActiveFilter(this._filterPopularité);
+        //? Trie les médias par popularité (likes)
+        const sorteByPopularity = photographerDataMediaById.sort(
+          (a, b) => b.likes - a.likes
         );
-        const photographerArticle =
-          newPhotographerArticleList.createPhotographArticleSection3();
-
-        photographerArticleList.appendChild(photographerArticle);
-      });
-
-      //? Boucle pour chaque média du photographe
-      for (let i = 0; i < photographerDataMediaById.length; i++) {
-        // eslint-disable-next-line no-undef
-        const lightBox = new LightBox(
-          //? Les médias du photographe
-          photographerDataMediaById[i],
-          //? Les informations du photographe
-          photographerDataById
+        //? Sélectionne la section des articles de photographes
+        const photographerArticleList = document.querySelector(
+          ".photograph_section3"
         );
-        lightBox.openLightBox(
-          photographerDataMediaById[i],
-          photographerDataById
-        ); //? Ouvre la lightbox pour le média sélectionné
-        lightBox.closeOpenLightBox(); //? Ferme la lightbox
-        lightBox.btnNextMedia(photographerDataById); //? Affiche le média suivant
-        lightBox.btnPreviousMedia(photographerDataById); //? Affiche le média précédent
-      }
+        //? Efface le contenu actuel de la section des articles de photographes
+        photographerArticleList.innerHTML = "";
+        //? Pour chaque média trié par popularité, crée un nouvel article de photographe et l'ajoute à la section des articles de photographes
+        sorteByPopularity.forEach((sorteDataByPopularité) => {
+          // eslint-disable-next-line no-undef
+          const newPhotographerArticleList = new PhotographerSection3(
+            sorteDataByPopularité,
+            photographerDataById
+          );
+          const photographerArticle =
+            newPhotographerArticleList.createPhotographArticleSection3();
 
-      //? Boucle pour ajouter les likes sur chaque photo
-      for (let i = 0; i < photographerDataMediaById.length; i++) {
-        // eslint-disable-next-line no-undef
-        const sommesCountLikes = new Likes(photographerDataMediaById[i].likes); //? "Likes" est une classe qui gère le comptage des likes d'un média.
-        sommesCountLikes.counterLike(photographerDataMediaById[i].likes); //? En appelant la méthode "counterLike" pour chaque instance "sommesCountLikes" créée, on ajoute un compteur de likes pour chaque photo dans la page web.
+          photographerArticleList.appendChild(photographerArticle);
+        });
+      
+        //? Boucle pour chaque média du photographe
+        for (let i = 0; i < photographerDataMediaById.length; i++) {
+          // eslint-disable-next-line no-undef
+          const lightBox = new LightBox(
+            //? Les médias du photographe
+            photographerDataMediaById[i],
+            //? Les informations du photographe
+            photographerDataById
+          );
+          lightBox.openLightBox(
+            photographerDataMediaById[i],
+            photographerDataById
+          ); //? Ouvre la lightbox pour le média sélectionné
+          lightBox.closeOpenLightBox(); //? Ferme la lightbox
+          lightBox.btnNextMedia(photographerDataById); //? Affiche le média suivant
+          lightBox.btnPreviousMedia(photographerDataById); //? Affiche le média précédent
+        
+          // eslint-disable-next-line no-undef
+          const sommesCountLikes = new Likes(photographerDataMediaById[i].likes); //? "Likes" est une classe qui gère le comptage des likes d'un média.
+          sommesCountLikes.counterLike(photographerDataMediaById[i].likes); //? En appelant la méthode "counterLike" pour chaque instance "sommesCountLikes" créée, on ajoute un compteur de likes pour chaque photo dans la page web.
+        }
       }
     });
   }
@@ -229,10 +231,7 @@ class Filter {
         lightBox.closeOpenLightBox(); //? Ferme la lightbox
         lightBox.btnNextMedia(photographerDataById); //? Affiche le média suivant
         lightBox.btnPreviousMedia(photographerDataById); //? Affiche le média précédent
-      }
-
-      //? Boucle pour ajouter les likes sur chaque photo
-      for (let i = 0; i < photographerDataMediaById.length; i++) {
+   
         // eslint-disable-next-line no-undef
         const sommesCountLikes = new Likes(photographerDataMediaById[i].likes); //? "Likes" est une classe qui gère le comptage des likes d'un média.
         sommesCountLikes.counterLike(photographerDataMediaById[i].likes); //? En appelant la méthode "counterLike" pour chaque instance "sommesCountLikes" créée, on ajoute un compteur de likes pour chaque photo dans la page web.
@@ -241,57 +240,57 @@ class Filter {
 
     //? Écouteur d'événement pour la touche entrée sur le bouton de filtre par date
     this._filterDate.addEventListener("keydown", (e) => {
-      e.preventDefault();
-      //? Définit le filtre par date comme étant le filtre actif
-      this.setActiveFilter(this._filterDate);
-      //? Trie les médias par date
-      const sorteByDate = photographerDataMediaById.sort((a, b) => {
-        const dateA = new Date(a.date);
-        const dateB = new Date(b.date);
-        return dateB - dateA;
-      });
-      //? Sélectionne la section des articles de photographes
-      const photographerArticleList = document.querySelector(
-        ".photograph_section3"
-      );
-      //? Efface le contenu actuel de la section des articles de photographes
-      photographerArticleList.innerHTML = "";
-      //? Pour chaque média trié par date, crée un nouvel article de photographe et l'ajoute à la section des articles de photographes
-      sorteByDate.forEach((sorteDataByDate) => {
-        // eslint-disable-next-line no-undef
-        const newPhotographerArticleList = new PhotographerSection3(
-          sorteDataByDate,
-          photographerDataById
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        //? Définit le filtre par date comme étant le filtre actif
+        this.setActiveFilter(this._filterDate);
+        //? Trie les médias par date
+        const sorteByDate = photographerDataMediaById.sort((a, b) => {
+          const dateA = new Date(a.date);
+          const dateB = new Date(b.date);
+          return dateB - dateA;
+        });
+        //? Sélectionne la section des articles de photographes
+        const photographerArticleList = document.querySelector(
+          ".photograph_section3"
         );
-        const photographerArticle =
-          newPhotographerArticleList.createPhotographArticleSection3();
+        //? Efface le contenu actuel de la section des articles de photographes
+        photographerArticleList.innerHTML = "";
+        //? Pour chaque média trié par date, crée un nouvel article de photographe et l'ajoute à la section des articles de photographes
+        sorteByDate.forEach((sorteDataByDate) => {
+          // eslint-disable-next-line no-undef
+          const newPhotographerArticleList = new PhotographerSection3(
+            sorteDataByDate,
+            photographerDataById
+          );
+          const photographerArticle =
+            newPhotographerArticleList.createPhotographArticleSection3();
 
-        photographerArticleList.appendChild(photographerArticle);
-      });
+          photographerArticleList.appendChild(photographerArticle);
+        });
+      
 
-      //? Boucle pour chaque média du photographe
-      for (let i = 0; i < photographerDataMediaById.length; i++) {
-        // eslint-disable-next-line no-undef
-        const lightBox = new LightBox(
-          //? Les médias du photographe
-          photographerDataMediaById[i],
-          //? Les informations du photographe
-          photographerDataById
-        );
-        lightBox.openLightBox(
-          photographerDataMediaById[i],
-          photographerDataById
-        ); //? Ouvre la lightbox pour le média sélectionné
-        lightBox.closeOpenLightBox(); //? Ferme la lightbox
-        lightBox.btnNextMedia(photographerDataById); //? Affiche le média suivant
-        lightBox.btnPreviousMedia(photographerDataById); //? Affiche le média précédent
-      }
-
-      //? Boucle pour ajouter les likes sur chaque photo
-      for (let i = 0; i < photographerDataMediaById.length; i++) {
-        // eslint-disable-next-line no-undef
-        const sommesCountLikes = new Likes(photographerDataMediaById[i].likes); //? "Likes" est une classe qui gère le comptage des likes d'un média.
-        sommesCountLikes.counterLike(photographerDataMediaById[i].likes); //? En appelant la méthode "counterLike" pour chaque instance "sommesCountLikes" créée, on ajoute un compteur de likes pour chaque photo dans la page web.
+        //? Boucle pour chaque média du photographe
+        for (let i = 0; i < photographerDataMediaById.length; i++) {
+          // eslint-disable-next-line no-undef
+          const lightBox = new LightBox(
+            //? Les médias du photographe
+            photographerDataMediaById[i],
+            //? Les informations du photographe
+            photographerDataById
+          );
+          lightBox.openLightBox(
+            photographerDataMediaById[i],
+            photographerDataById
+          ); //? Ouvre la lightbox pour le média sélectionné
+          lightBox.closeOpenLightBox(); //? Ferme la lightbox
+          lightBox.btnNextMedia(photographerDataById); //? Affiche le média suivant
+          lightBox.btnPreviousMedia(photographerDataById); //? Affiche le média précédent
+      
+          // eslint-disable-next-line no-undef
+          const sommesCountLikes = new Likes(photographerDataMediaById[i].likes); //? "Likes" est une classe qui gère le comptage des likes d'un média.
+          sommesCountLikes.counterLike(photographerDataMediaById[i].likes); //? En appelant la méthode "counterLike" pour chaque instance "sommesCountLikes" créée, on ajoute un compteur de likes pour chaque photo dans la page web.
+        }
       }
     });
   }
@@ -342,10 +341,7 @@ class Filter {
         lightBox.closeOpenLightBox(); //? Ferme la lightbox
         lightBox.btnNextMedia(photographerDataById); //? Affiche le média suivant
         lightBox.btnPreviousMedia(photographerDataById); //? Affiche le média précédent
-      }
-
-      //? Boucle pour ajouter les likes sur chaque photo
-      for (let i = 0; i < photographerDataMediaById.length; i++) {
+      
         // eslint-disable-next-line no-undef
         const sommesCountLikes = new Likes(photographerDataMediaById[i].likes); //? "Likes" est une classe qui gère le comptage des likes d'un média.
         sommesCountLikes.counterLike(photographerDataMediaById[i].likes); //? En appelant la méthode "counterLike" pour chaque instance "sommesCountLikes" créée, on ajoute un compteur de likes pour chaque photo dans la page web.
@@ -354,54 +350,53 @@ class Filter {
 
     //? Écouteur d'événement pour la touche entrée sur le bouton de filtre par titre
     this._filterTitre.addEventListener("keydown", (e) => {
-      e.preventDefault();
-      //? Définit le filtre par titre comme étant le filtre actif
-      this.setActiveFilter(this._filterTitre);
-      //? Trie les médias par titre
-      const sorteByTitre = photographerDataMediaById.sort((a, b) =>
-        a.title.localeCompare(b.title)
-      );
-      //? Sélectionne la section des articles de photographes
-      const photographerArticleList = document.querySelector(
-        ".photograph_section3"
-      );
-      //? Efface le contenu actuel de la section des articles de photographes
-      photographerArticleList.innerHTML = "";
-      //? Pour chaque média trié par titre, crée un nouvel article de photographe et l'ajoute à la section des articles de photographes
-      sorteByTitre.forEach((sorteDataByTitre) => {
-        // eslint-disable-next-line no-undef
-        const newPhotographerArticleList = new PhotographerSection3(
-          sorteDataByTitre,
-          photographerDataById
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        //? Définit le filtre par titre comme étant le filtre actif
+        this.setActiveFilter(this._filterTitre);
+        //? Trie les médias par titre
+        const sorteByTitre = photographerDataMediaById.sort((a, b) =>
+          a.title.localeCompare(b.title)
         );
-        const photographerArticle =
-          newPhotographerArticleList.createPhotographArticleSection3();
-        photographerArticleList.appendChild(photographerArticle);
-      });
-
-      //? Boucle pour chaque média du photographe
-      for (let i = 0; i < photographerDataMediaById.length; i++) {
-        // eslint-disable-next-line no-undef
-        const lightBox = new LightBox(
-          //? Les médias du photographe
-          photographerDataMediaById[i],
-          //? Les informations du photographe
-          photographerDataById
+        //? Sélectionne la section des articles de photographes
+        const photographerArticleList = document.querySelector(
+          ".photograph_section3"
         );
-        lightBox.openLightBox(
-          photographerDataMediaById[i],
-          photographerDataById
-        ); //? Ouvre la lightbox pour le média sélectionné
-        lightBox.closeOpenLightBox(); //? Ferme la lightbox
-        lightBox.btnNextMedia(photographerDataById); //? Affiche le média suivant
-        lightBox.btnPreviousMedia(photographerDataById); //? Affiche le média précédent
-      }
+        //? Efface le contenu actuel de la section des articles de photographes
+        photographerArticleList.innerHTML = "";
+        //? Pour chaque média trié par titre, crée un nouvel article de photographe et l'ajoute à la section des articles de photographes
+        sorteByTitre.forEach((sorteDataByTitre) => {
+          // eslint-disable-next-line no-undef
+          const newPhotographerArticleList = new PhotographerSection3(
+            sorteDataByTitre,
+            photographerDataById
+          );
+          const photographerArticle =
+            newPhotographerArticleList.createPhotographArticleSection3();
+          photographerArticleList.appendChild(photographerArticle);
+        });
 
-      //? Boucle pour ajouter les likes sur chaque photo
-      for (let i = 0; i < photographerDataMediaById.length; i++) {
-        // eslint-disable-next-line no-undef
-        const sommesCountLikes = new Likes(photographerDataMediaById[i].likes); //? "Likes" est une classe qui gère le comptage des likes d'un média.
-        sommesCountLikes.counterLike(photographerDataMediaById[i].likes); //? En appelant la méthode "counterLike" pour chaque instance "sommesCountLikes" créée, on ajoute un compteur de likes pour chaque photo dans la page web.
+        //? Boucle pour chaque média du photographe
+        for (let i = 0; i < photographerDataMediaById.length; i++) {
+          // eslint-disable-next-line no-undef
+          const lightBox = new LightBox(
+            //? Les médias du photographe
+            photographerDataMediaById[i],
+            //? Les informations du photographe
+            photographerDataById
+          );
+          lightBox.openLightBox(
+            photographerDataMediaById[i],
+            photographerDataById
+          ); //? Ouvre la lightbox pour le média sélectionné
+          lightBox.closeOpenLightBox(); //? Ferme la lightbox
+          lightBox.btnNextMedia(photographerDataById); //? Affiche le média suivant
+          lightBox.btnPreviousMedia(photographerDataById); //? Affiche le média précédent
+      
+          // eslint-disable-next-line no-undef
+          const sommesCountLikes = new Likes(photographerDataMediaById[i].likes); //? "Likes" est une classe qui gère le comptage des likes d'un média.
+          sommesCountLikes.counterLike(photographerDataMediaById[i].likes); //? En appelant la méthode "counterLike" pour chaque instance "sommesCountLikes" créée, on ajoute un compteur de likes pour chaque photo dans la page web.
+        }
       }
     });
   }

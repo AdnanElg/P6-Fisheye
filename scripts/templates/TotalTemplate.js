@@ -32,7 +32,7 @@ class PhotographerSection4 {
       for (let i = 0; i < this._photographers.length; i++) {
         // eslint-disable-next-line no-undef
         const sommesCountLikes = new Likes(this._photographers[i].likes); //? "Likes" est une classe qui gère le comptage des likes d'un média.
-        sommesCountLikes.counterLike(this._photographers[i].likes); //? En appelant la méthode "counterLike" pour chaque instance "sommesCountLikes" créée, on ajoute un compteur de likes pour chaque photo dans la page web.
+        sommesCountLikes.counterLike(this._photographers[i].likes);//? En appelant la méthode "counterLike" pour chaque instance "sommesCountLikes" créée, on ajoute un compteur de likes pour chaque photo dans la page web.
       }
     }, 50);
 

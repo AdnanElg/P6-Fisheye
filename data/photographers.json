@@ -61,7 +61,7 @@
       "photographerId": 82,
       "title": "Fashion Yellow Beach",
       "image": "Fashion_Yellow_Beach.jpg",
-      "likes": 62,
+      "likes": 61,
       "date": "2011-12-08",
       "price": 55
     },
@@ -133,7 +133,7 @@
       "photographerId": 82,
       "title": "Purple Tunnel",
       "image": "Art_Purple_light.jpg",
-      "likes": 24,
+      "likes": 25,
       "date": "2018-05-05",
       "price": 55
     },
@@ -152,7 +152,7 @@
       "photographerId": 925,
       "title": "8 Rows",
       "image": "Sport_2000_with_8.jpg",
-      "likes": 52,
+      "likes": 53,
       "date": "2013-02-30",
       "price": 70
     },
@@ -161,7 +161,7 @@
       "photographerId": 925,
       "title": "Fashion Wings",
       "image": "Fashion_Wings.jpg",
-      "likes": 58,
+      "likes": 50,
       "date": "2018-07-17",
       "price": 70
     },
@@ -215,7 +215,7 @@
       "photographerId": 925,
       "title": "Animal Majesty",
       "image": "Animals_Majesty.jpg",
-      "likes": 52,
+      "likes": 54,
       "date": "2017-03-13",
       "price": 70
     },
@@ -224,7 +224,7 @@
       "photographerId": 925,
       "title": "Cute puppy on sunset",
       "video": "Animals_Puppiness.mp4",
-      "likes": 52,
+      "likes": 57,
       "date": "2016-06-12",
       "price": 70
     },
@@ -233,7 +233,7 @@
       "photographerId": 527,
       "title": "Rocky mountains from the air",
       "video": "Travel_Rock_Mountains.mp4",
-      "likes": 23,
+      "likes": 24,
       "date": "2017-03-18",
       "price": 45
     },
@@ -260,7 +260,7 @@
       "photographerId": 527,
       "title": "Bridge into the Forest",
       "image": "Travel_Bridge_into_Forest.jpg",
-      "likes": 34,
+      "likes": 33,
       "date": "2016-04-05",
       "price": 45
     },
@@ -415,7 +415,7 @@
       "photographerId": 195,
       "title": "Senset on Canals, Venice",
       "image": "Travel_SunsetonCanals.jpg",
-      "likes": 53,
+      "likes": 51,
       "date": "2019-05-06",
       "price": 60
     },
@@ -433,7 +433,7 @@
       "photographerId": 195,
       "title": "City Bike and Stair, Paris",
       "image": "Travel_Bike_and_Stair.jpg",
-      "likes": 53,
+      "likes": 55,
       "date": "2019-06-20",
       "price": 60
     },
@@ -442,7 +442,7 @@
       "photographerId": 195,
       "title": "Adventure Door, India",
       "image": "Travel_Adventure_Door.jpg",
-      "likes": 63,
+      "likes": 62,
       "date": "2019-06-26",
       "price": 60
     },
@@ -460,7 +460,7 @@
       "photographerId": 195,
       "title": "On a Hill, Tibet",
       "image": "Architecture_On_a_hill.jpg",
-      "likes": 63,
+      "likes": 64,
       "date": "2019-07-20",
       "price": 60
     },

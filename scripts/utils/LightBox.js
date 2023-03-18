@@ -36,40 +36,48 @@ class LightBox {
       `;
     });
     //? Ajoute un écouteur d'événement sur la touche entrée pour ouvrir la lightbox
-    this._media.addEventListener("keydown", () => {
-      //? Change la propriété display du modal pour l'afficher
-      this._modalLightBox.style.display = "block";
-      //? Injecte le contenu de la lightbox dans le container
-      this._lightbox__container.innerHTML = `
-      ${
-        photographerDataMediaById.image
-          ? `<img alt="${photographerDataMediaById.title}" aria-label="${photographerDataMediaById.title}" src="../assets/profil_photographers/${photographerDataById.name}/${photographerDataMediaById.image}">`
-          : `<video title="${photographerDataMediaById.title}" aria-label="${photographerDataMediaById.title}" src="../assets/profil_photographers/${photographerDataById.name}/${photographerDataMediaById.video}" controls></video>`
+    this._media.addEventListener("keydown", (e) => {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        //? Change la propriété display du modal pour l'afficher
+        this._modalLightBox.style.display = "block";
+        //? Injecte le contenu de la lightbox dans le container
+        this._lightbox__container.innerHTML = `
+        ${
+          photographerDataMediaById.image
+            ? `<img alt="${photographerDataMediaById.title}" aria-label="${photographerDataMediaById.title}" src="../assets/profil_photographers/${photographerDataById.name}/${photographerDataMediaById.image}">`
+            : `<video title="${photographerDataMediaById.title}" aria-label="${photographerDataMediaById.title}" src="../assets/profil_photographers/${photographerDataById.name}/${photographerDataMediaById.video}" controls></video>`
+        }
+        <p tabindex="0" class="lightbox__title">${
+          photographerDataMediaById.title
+        }</p>
+      `;
       }
-      <p tabindex="0" class="lightbox__title">${
-        photographerDataMediaById.title
-      }</p>
-    `;
     });
   }
 
   closeOpenLightBox() {
     //? Ajoute un événement click sur le bouton de fermeture de la lightbox
-    this._btnCloseLightBox.addEventListener("click", () => {
+    this._btnCloseLightBox.addEventListener("click", (e) => {
+      e.preventDefault();
       //? Cache la lightbox
       this._modalLightBox.style.display = "none";
     });
 
     //? Ajoute un événement clavier sur le bouton de fermeture de la lightbox
-    this._btnCloseLightBox.addEventListener("keydown", () => {
-      //? Cache la lightbox lorsque la touche "Entrée" est pressée
-      this._modalLightBox.style.display = "none";
+    this._btnCloseLightBox.addEventListener("keydown", (e) => {
+      if (e.key === 'Escape') {
+        e.preventDefault();
+        //? Cache la lightbox lorsque la touche "Entrée" est pressée
+        this._modalLightBox.style.display = "none";
+      }
     });
   }
 
   btnNextMedia(photographerDataById) {
     //? Lorsque l'utilisateur clique sur le bouton "suivant" de la lightbox
-    this._btnNextLightBox.addEventListener("click", () => {
+    this._btnNextLightBox.addEventListener("click", (e) => {
+      e.preventDefault();
       //? On met à jour l'index courant en se déplaçant vers le média suivant
       this._currentIndex = (this._currentIndex + 1) % this._array.length;
       //? On récupère le média suivant
@@ -85,26 +93,30 @@ class LightBox {
       `;
     });
     //? Lorsque l'utilisateur utilise le clavier pour appuyer sur le bouton "suivant" de la lightbox
-    this._btnNextLightBox.addEventListener("keydown", () => {
-      //? On met à jour l'index courant en se déplaçant vers le média suivant
-      this._currentIndex = (this._currentIndex + 1) % this._array.length;
-      //? On récupère le média suivant
-      const nextMedia = this._array[this._currentIndex];
-      //? On met à jour le contenu de la lightbox avec le média suivant
-      this._lightbox__container.innerHTML = `
-      ${
-        nextMedia.image
-          ? `<img alt="${nextMedia.title}" aria-label="${nextMedia.title}" src="../assets/profil_photographers/${photographerDataById.name}/${nextMedia.image}">`
-          : `<video title="${nextMedia.title}" aria-label="${nextMedia.title}" src="../assets/profil_photographers/${photographerDataById.name}/${nextMedia.video}" controls></video>`
+    document.addEventListener("keydown", (e) => {
+      if (e.key === 'ArrowRight') {
+        e.preventDefault();
+        //? On met à jour l'index courant en se déplaçant vers le média suivant
+        this._currentIndex = (this._currentIndex + 1) % this._array.length;
+        //? On récupère le média suivant
+        const nextMedia = this._array[this._currentIndex];
+        //? On met à jour le contenu de la lightbox avec le média suivant
+        this._lightbox__container.innerHTML = `
+        ${
+          nextMedia.image
+            ? `<img alt="${nextMedia.title}" aria-label="${nextMedia.title}" src="../assets/profil_photographers/${photographerDataById.name}/${nextMedia.image}">`
+            : `<video title="${nextMedia.title}" aria-label="${nextMedia.title}" src="../assets/profil_photographers/${photographerDataById.name}/${nextMedia.video}" controls></video>`
+        }
+        <p tabindex="0" class="lightbox__title">${nextMedia.title}</p>
+        `;
       }
-      <p tabindex="0" class="lightbox__title">${nextMedia.title}</p>
-      `;
     });
   }
 
   btnPreviousMedia(photographerDataById) {
     //? Ajout d'un écouteur d'événement au clic du bouton précédent
-    this._btnPreviousLightBox.addEventListener("click", () => {
+    this._btnPreviousLightBox.addEventListener("click", (e) => {
+      e.preventDefault();
       //? Calcul de l'indice de l'élément précédent
       this._currentIndex = (this._currentIndex - 1) % this._array.length;
       //? Si l'indice est inférieur à 0, on boucle à la fin du tableau
@@ -124,24 +136,27 @@ class LightBox {
       `;
     });
     //? Ajout d'un écouteur d'événement pour la navigation précédente avec le clavier
-    this._btnPreviousLightBox.addEventListener("keydown", () => {
-      //? Calcul de l'indice de l'élément précédent
-      this._currentIndex = (this._currentIndex - 1) % this._array.length;
-      //? Si l'indice est inférieur à 0, on boucle à la fin du tableau
-      if (this._currentIndex < 0) {
-        this._currentIndex = this._array.length - 1;
+    document.addEventListener("keydown", (e) => {
+      if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        //? Calcul de l'indice de l'élément précédent
+        this._currentIndex = (this._currentIndex - 1) % this._array.length;
+        //? Si l'indice est inférieur à 0, on boucle à la fin du tableau
+        if (this._currentIndex < 0) {
+          this._currentIndex = this._array.length - 1;
+        }
+        //? Récupération de l'élément précédent
+        const nextMedia = this._array[this._currentIndex];
+        //? Affichage de l'élément précédent dans la lightbox
+        this._lightbox__container.innerHTML = `
+        ${
+          nextMedia.image
+            ? `<img alt="${nextMedia.title}" aria-label="${nextMedia.title}" src="../assets/profil_photographers/${photographerDataById.name}/${nextMedia.image}">`
+            : `<video title="${nextMedia.title}" aria-label="${nextMedia.title}" src="../assets/profil_photographers/${photographerDataById.name}/${nextMedia.video}" controls></video>`
+        }
+        <p tabindex="0" class="lightbox__title">${nextMedia.title}</p>
+        `;
       }
-      //? Récupération de l'élément précédent
-      const nextMedia = this._array[this._currentIndex];
-      //? Affichage de l'élément précédent dans la lightbox
-      this._lightbox__container.innerHTML = `
-      ${
-        nextMedia.image
-          ? `<img alt="${nextMedia.title}" aria-label="${nextMedia.title}" src="../assets/profil_photographers/${photographerDataById.name}/${nextMedia.image}">`
-          : `<video title="${nextMedia.title}" aria-label="${nextMedia.title}" src="../assets/profil_photographers/${photographerDataById.name}/${nextMedia.video}" controls></video>`
-      }
-      <p tabindex="0" class="lightbox__title">${nextMedia.title}</p>
-      `;
     });
   }
 }

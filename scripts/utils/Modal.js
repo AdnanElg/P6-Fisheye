@@ -30,8 +30,10 @@ class Modal {
     });
     //? Ajouter un écouteur d'événement pour la touche "Entrée" sur le bouton d'ouverture de la modale
     this._btnOpenModal.addEventListener("keydown", (e) => {
-      e.preventDefault();
-      this._modalContact.style.display = "block";
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        this._modalContact.style.display = "block";
+      }
     });
   }
 
@@ -44,8 +46,10 @@ class Modal {
     });
     //? Ajouter un écouteur d'événement pour la touche "Entrée" sur le bouton de fermeture de la modale
     this._btnCloseModal.addEventListener("keydown", (e) => {
-      e.preventDefault();
-      this._modalContact.style.display = "none";
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        this._modalContact.style.display = "none";
+      }
     });
   }
 
@@ -181,6 +185,36 @@ class Modal {
         );
       } else {
         alert("Merci de remplir correctement la fiche de contact.");
+      }
+    });
+
+    this._btnSubmitForm.addEventListener("keydown", (e) => {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        if (
+          firstNameControle() &&
+          lastNameControle() &&
+          emailControle() &&
+          messageControle()
+        ) {
+          this._modalContact.style.display = "none";
+
+          console.log(
+            "Prénom : " +
+              this._firstName.value.trim() +
+              "\n" +
+              "Nom : " +
+              this._lastName.value.trim() +
+              "\n" +
+              "E-mail : " +
+              this._email.value.trim() +
+              "\n" +
+              "Message : " +
+              this._message.value.trim()
+          );
+        } else {
+          alert("Merci de remplir correctement la fiche de contact.");
+        }
       }
     });
   }
