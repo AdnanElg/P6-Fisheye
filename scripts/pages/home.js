@@ -5,7 +5,7 @@ class Home {
     this.photographer_home = document.querySelector(".photographer_section");
     //? Instancie une API de données avec le chemin du fichier JSON contenant les données des photographes
     // eslint-disable-next-line no-undef
-    this.dataApi = new DataApi("./photographers.json");
+    this.dataApi = new DataApi("../photographers.json");
   }
 
   //? Fonction principale qui affiche toutes les cartes de photographes sur la page d'accueil
