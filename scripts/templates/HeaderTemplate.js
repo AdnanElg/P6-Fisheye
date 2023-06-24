@@ -22,7 +22,7 @@ class PhotographerSection1 {
           <button tabindex="0" id='btnOpenModal' type="button" aria-label="Bouton pour contacter le photographe">Contactez-moi</button>
         </div>
         <div class='picture_profil_photographer' tabindex="0">
-          <img alt="Photo de profil de ${this._photographers.name}" aria-hidden="true"  class='info_picture' src="./assets/photo_profil_home/${this._photographers.portrait}">
+          <img alt="Photo de profil de ${this._photographers.name}" aria-hidden="true"  class='info_picture' src="../assets/photo_profil_home/${this._photographers.portrait}">
         </div>
       `;
 
