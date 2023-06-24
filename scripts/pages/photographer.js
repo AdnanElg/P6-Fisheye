@@ -14,7 +14,7 @@ class Photographer {
 
     //? Créer une nouvelle instance de la classe DataApi avec l'URL du fichier photographers.json
     // eslint-disable-next-line no-undef
-    this.dataApi = new DataApi(`../data/photographers.json`);
+    this.dataApi = new DataApi(`../photographers.json`);
   }
 
   async main() {
