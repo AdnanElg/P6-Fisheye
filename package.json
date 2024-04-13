@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "description": "Création d'un site accessible pour une plateforme de photographes freelances.",
   "main": "index.js",
-  "scripts": {
-    "build": "postcss ./css/home.css -u autoprefixer cssnano -o ./build/home.min.css && postcss ./css/photographers.css -u autoprefixer cssnano -o ./build/photographers.min.css && uglifyjs ./scripts/api/Api.js -o ./build/Api.min.js && uglifyjs ./scripts/factories/MediaFactory.js -o ./build/MediaFactory.min.js && uglifyjs ./scripts/pages/Home.js -o ./build/Home.min.js && uglifyjs ./scripts/pages/Photographer.js -o ./build/Photographer.min.js && uglifyjs ./scripts/templates/ArticleTemplate.js -o ./build/ArticleTemplate.min.js && uglifyjs ./scripts/templates/FilterTemplate.js -o ./build/FilterTemplate.min.js && uglifyjs ./scripts/templates/HeaderTemplate.js -o ./build/HeaderTemplate.min.js && uglifyjs ./scripts/templates/HomeTemplate.js -o ./build/HomeTemplate.min.js && uglifyjs ./scripts/templates/LightBoxTemplate.js -o ./build/LightBoxTemplate.min.js && uglifyjs ./scripts/templates/ModalTemplate.js -o ./build/ModalTemplate.min.js && uglifyjs ./scripts/templates/TotalTemplate.js -o ./build/TotalTemplate.min.js && uglifyjs ./scripts/utils/Filter.js -o ./build/Filter.min.js && uglifyjs ./scripts/utils/LightBox.js -o ./build/LightBox.min.js && uglifyjs ./scripts/utils/Likes.js -o ./build/Likes.min.js && uglifyjs ./scripts/utils/Modal.js -o ./build/Modal.min.js"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/AdnanElg/P6-Fisheye.git"
