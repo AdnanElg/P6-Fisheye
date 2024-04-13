@@ -27,7 +27,8 @@ class Api {
       const res = await fetch(this._url); //? Envoie une requête HTTP GET à l'URL de base de l'API
       const data = await res.json(); //? Transforme la réponse en objet JSON
 
-      const photographerById = data.photographers.find( //? Recherche le photographe avec l'ID spécifié
+      const photographerById = data.photographers.find(
+        //? Recherche le photographe avec l'ID spécifié
         (dataPhotographer) => dataPhotographer.id === id
       );
       return photographerById; //? Renvoie le photographe trouvé
@@ -43,7 +44,8 @@ class Api {
       const res = await fetch(this._url); //? Envoie une requête HTTP GET à l'URL de base de l'API
       const data = await res.json(); //? Transforme la réponse en objet JSON
 
-      const photographerMediaById = data.media.filter( //? Filtre les médias pour ne garder que ceux du photographe avec l'ID spécifié
+      const photographerMediaById = data.media.filter(
+        //? Filtre les médias pour ne garder que ceux du photographe avec l'ID spécifié
         (dataMediaPhotographer) => dataMediaPhotographer.photographerId === id
       );
 
@@ -54,7 +56,6 @@ class Api {
     }
   }
 }
-
 
 //? Sous-classe qui étend la classe de base Api pour fournir des méthodes plus spécifiques
 // eslint-disable-next-line no-unused-vars
